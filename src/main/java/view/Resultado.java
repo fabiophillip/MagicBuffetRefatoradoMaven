@@ -21,7 +21,7 @@ public class Resultado extends javax.swing.JFrame {
      * Creates new form ResultadoCliente
      */
     private  String tipo; 
-    private GenericDAOInterface daoAcessaDadosPessoas;// um DAO genérico para acesso a dados de pessoas cadastradas.
+    private GenericDAOInterface daoAcessaDadosPessoas;// um DAO generico para acesso a dados de pessoas cadastradas.
     
    
    public Resultado(String nome, String cpf, String bairro, String telefone, String rua, String rg, String numero, String cep, String cidade, String categoriaPessoa)
@@ -205,7 +205,7 @@ public class Resultado extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        jLabel1.setText("Informações do Cliente");
+        jLabel1.setText("Informacoes do Cliente");
 
         fecharButton.setText("Fechar");
         fecharButton.addActionListener(new java.awt.event.ActionListener() {
@@ -339,7 +339,7 @@ public class Resultado extends javax.swing.JFrame {
 
     private void excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirActionPerformed
         // TODO add your handling code here:
-        int resposta = JOptionPane.showConfirmDialog( null,"Tem certeza que quer exlcuir o cliente do sistema?","ConfirmaÃ§Ã£o", JOptionPane.YES_NO_OPTION);
+        int resposta = JOptionPane.showConfirmDialog( null,"Tem certeza que quer excluir o cliente do sistema?","Confirmacao", JOptionPane.YES_NO_OPTION);
         if(resposta == JOptionPane.YES_OPTION){                            
             Pessoa p = (Pessoa) daoAcessaDadosPessoas.buscar(getTextoCPF().getText(),tipo);        
             daoAcessaDadosPessoas.remover(p);
@@ -375,7 +375,7 @@ public class Resultado extends javax.swing.JFrame {
             this.dispose();
         }
         else{            
-            int resposta = JOptionPane.showConfirmDialog( null,"Tem certeza que quer editar?","ConfirmaÃ§Ã£o", JOptionPane.YES_NO_OPTION);
+            int resposta = JOptionPane.showConfirmDialog( null,"Tem certeza que quer editar?","Confirmacao", JOptionPane.YES_NO_OPTION);
             if(resposta == JOptionPane.YES_OPTION){                
                 Pessoa p = (Pessoa)daoAcessaDadosPessoas.buscar(getTextoCPF().getText(),tipo);
                 p.setBairro(getTextoBairro().getText());

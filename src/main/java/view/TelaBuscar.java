@@ -176,7 +176,7 @@ public class TelaBuscar extends javax.swing.JFrame
         if (ClienteRB.isSelected()) {
     
             if (cpfText.getText().equals("")) {
-            	//ssem CPF para a busca? È busca por categoria dae pessoas!
+            	//ssem CPF para a busca? eh busca por categoria dae pessoas!
             	this.buscarPessoasPorCategoria(daoConsultaDadosPessoa, pessoaQualquer.getStringCliente());
             } else {
             	//foi especificado um CPF para busca de cliente
@@ -209,7 +209,7 @@ public class TelaBuscar extends javax.swing.JFrame
                 modelo = new DefaultTableModel();
                 modelo.addColumn("Clientes das Festas");
                 modelo.addColumn("CPF");
-                modelo.addColumn("Hor√°rio");
+                modelo.addColumn("Horario");
                 modelo.addColumn("Id");
                 
                 for (int i = 0; i < festa.size(); i++) {
@@ -253,9 +253,9 @@ public class TelaBuscar extends javax.swing.JFrame
     }
 
     /**
-     * busca(usando um DAO) dados de Pessoas de acordo com um CPF especificado pelo usu·rio 
+     * busca(usando um DAO) dados de Pessoas de acordo com um CPF especificado pelo usuario 
      * @param daoConsultaDadosDePessoas DAO para consulta de pessoas
-     * @param cpfDaPessoa CPF especificado pelo usu·rio para consulta
+     * @param cpfDaPessoa CPF especificado pelo usuario para consulta
      * @param categoriaPessoa categoria da pessoa a pesquisar(Ex: "monitor", "cliente")
      */
     private void buscarPessoaPorCPF(GenericDAOInterface daoConsultaDadosDePessoas, 
@@ -263,7 +263,7 @@ public class TelaBuscar extends javax.swing.JFrame
     {
     	 Pessoa p = (Pessoa) daoConsultaDadosDePessoas.buscar(cpfText.getText(), categoriaPessoa);
          if (p.getPnome() == null) {
-        	 String mensagemDeErro = categoriaPessoa + " n„o encontrado";
+        	 String mensagemDeErro = categoriaPessoa + " nao encontrado";
              JOptionPane.showMessageDialog(this, mensagemDeErro);
          } 
          else 

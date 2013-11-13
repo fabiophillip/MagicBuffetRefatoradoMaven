@@ -42,7 +42,7 @@ public class ResultadoFesta extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField local;
     
-    //ResultadoFesta agora tem como parametro uma festa, j· que sem ela, os componentes da GUI n„o teriam valores
+    //ResultadoFesta agora tem como parametro uma festa, ja que sem ela, os componentes da GUI nao teriam valores
     public ResultadoFesta(Festa f) 
     {
         initComponents();
@@ -82,7 +82,7 @@ public class ResultadoFesta extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
-        jLabel1.setText("Informa√ß√µes sobre a Festa");
+        jLabel1.setText("Informacoes sobre a Festa");
 
         jLabel2.setText("Cliente");
 
@@ -90,7 +90,7 @@ public class ResultadoFesta extends javax.swing.JFrame {
 
         jLabel4.setText("Estilo");
 
-        jLabel5.setText("Hor√°rio");
+        jLabel5.setText("Horario");
 
         jLabel6.setText("Local");
 
@@ -245,7 +245,7 @@ public class ResultadoFesta extends javax.swing.JFrame {
          this.itensPacote.setText(f.getPacote());
          this.itensPacote.setEditable(false);
          String dataInicio = f.getDataInicio();
-         //a data de inÌcio do BD vem em yy-mm-dd 00:00:00. queremos no formato dd-mm-yy. Vamo convertÍ-la!
+         //a data de inicio do BD vem em yy-mm-dd 00:00:00. queremos no formato dd-mm-yy. Vamo converte-la
          String [] dataInicioDividida = dataInicio.split(" ");
          String dataInvertida = dataInicioDividida[0];
          String [] diaMesEAno = dataInvertida.split("-");
@@ -258,7 +258,7 @@ public class ResultadoFesta extends javax.swing.JFrame {
              this.local.setText("BUFFET");
           }
           else{
-              if(f.getLocal().equalsIgnoreCase("Endere√ßo do cliente")){
+              if(f.getLocal().equalsIgnoreCase("Endereco do cliente")){
                   
                   this.local.setText(pessoa.getRua() +" - " +  
                           pessoa.getBairro() + " - " + pessoa.getNumero());

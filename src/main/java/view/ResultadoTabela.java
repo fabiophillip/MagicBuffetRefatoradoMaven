@@ -54,7 +54,7 @@ public class ResultadoTabela extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        Informacoes.setText("Informações");
+        Informacoes.setText("Informacoes");
         Informacoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InformacoesActionPerformed(evt);
@@ -198,7 +198,7 @@ public class ResultadoTabela extends javax.swing.JFrame {
 
     private void ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirActionPerformed
         // TODO add your handling code here:
-    int resposta = JOptionPane.showConfirmDialog( null,"Tem certeza que quer exlcuir o cliente do sistema?","Confirmação", JOptionPane.YES_NO_OPTION);
+    int resposta = JOptionPane.showConfirmDialog( null,"Tem certeza que quer exlcuir o cliente do sistema?","Confirmacao", JOptionPane.YES_NO_OPTION);
         if(resposta == JOptionPane.YES_OPTION){
             int linha = tabela.getSelectedRow();            
             Object valueAt = tabela.getValueAt(linha, 1);

@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 public class Mensagens {
     
     public void imprimeErro(String msg, String msgErro) {
-        JOptionPane.showMessageDialog(null, msg, "Erro crítico", 0);
+        JOptionPane.showMessageDialog(null, msg, "Erro critico", 0);
         System.err.println(msg);
         System.out.println(msgErro);
         System.exit(0);

@@ -21,7 +21,7 @@ public class TelaCadastrarItem extends javax.swing.JFrame {
     /**
      * Creates new form TelaCadastrarItem
      */
-	private DAOComBuscaMultiplaInterface daoAcessoCadastroDeItens; //um DAO gen�rico que serve para acessar cadastros de itens
+	private DAOComBuscaMultiplaInterface daoAcessoCadastroDeItens; //um DAO generico que serve para acessar cadastros de itens
 	
     public TelaCadastrarItem() {
     	daoAcessoCadastroDeItens = FabricaDeDAO.criarItemDAO();
@@ -84,7 +84,7 @@ public class TelaCadastrarItem extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Preço Unitário");
+        jLabel3.setText("Preco Unitario");
 
         textopreco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

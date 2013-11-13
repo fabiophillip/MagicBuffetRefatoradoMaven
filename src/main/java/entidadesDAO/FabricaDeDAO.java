@@ -2,7 +2,6 @@ package entidadesDAO;
 
 
 import InterfaceDAO.DAOComBuscaMultiplaInterface;
-import InterfaceDAO.GenericDAOInterface;
 import InterfaceDAO.InterfaceFestaDAO;
 import InterfaceDAO.InterfaceItemDAO;
 import InterfaceDAO.InterfacePacoteDAO;

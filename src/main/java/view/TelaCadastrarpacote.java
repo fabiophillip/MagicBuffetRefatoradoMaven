@@ -81,7 +81,7 @@ public class TelaCadastrarpacote extends javax.swing.JFrame
             }
         });
 
-        precoPacote.setText("Pre√ßo do Pacote");
+        precoPacote.setText("Preco do Pacote");
 
         textoPreco.setEditable(false);
 
@@ -112,7 +112,7 @@ public class TelaCadastrarpacote extends javax.swing.JFrame
         ));
         jScrollPane1.setViewportView(getTabela());
 
-        calcularPreco.setText("Calcular Pre√ßo");
+        calcularPreco.setText("Calcular Preco");
         calcularPreco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 calcularPrecoActionPerformed(evt);
@@ -216,7 +216,7 @@ public class TelaCadastrarpacote extends javax.swing.JFrame
         String precoEmString = textoPreco.getText();
         
         if(DAOPacotes.buscarPorNome(nome).getPacoteNome() != null){
-            JOptionPane.showMessageDialog(this, "Nome de pacote j√° cadastrado");            
+            JOptionPane.showMessageDialog(this, "Nome de pacote ja cadastrado");            
         }
         else if(nome.length() == 0)
         {
@@ -258,7 +258,7 @@ public class TelaCadastrarpacote extends javax.swing.JFrame
         	}
         	else
         	{
-        		JOptionPane.showMessageDialog(this, "calcule o preÁo do pacote antes de salvar");
+        		JOptionPane.showMessageDialog(this, "calcule o preco do pacote antes de salvar");
         	}
         
         }
@@ -299,7 +299,7 @@ public class TelaCadastrarpacote extends javax.swing.JFrame
             }
             else
             {
-            	JOptionPane.showMessageDialog(this, "valor para desconto inv·lido. Por favor insira um valor v·lido");
+            	JOptionPane.showMessageDialog(this, "valor para desconto invalido. Por favor insira um valor valido");
             	this.precoFoiCalculado = false; //o desconto foi invalido? entao o preco nao pode ser calculado
             }
         }

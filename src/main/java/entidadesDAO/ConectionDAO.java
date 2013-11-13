@@ -38,7 +38,7 @@ public abstract class ConectionDAO {
                 conn.close();
             }
         } catch (Exception e) {
-            mensagem.imprimeErro("Erro ao fechar conexão", e.getMessage());
+            mensagem.imprimeErro("Erro ao fechar conexao", e.getMessage());
         }
     }
 
