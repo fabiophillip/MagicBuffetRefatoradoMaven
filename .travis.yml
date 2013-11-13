@@ -5,4 +5,5 @@ jdk:
   - openjdk6
   
 script: 
+  - mvn install -DskipTests=false
   - mvn test
