@@ -141,7 +141,7 @@ public class TelaInicial extends javax.swing.JFrame {
     Cadastros tela = new Cadastros();
     String [] options = new String[] {"Gerente", "Cliente", "Monitor"};
     
-    int resposta = JOptionPane.showOptionDialog(null, "Escolha o tipo de cadastro", "Opções",
+    int resposta = JOptionPane.showOptionDialog(null, "Escolha o tipo de cadastro", "Opcoes",
      JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE, null, options, options[1]);
     
         System.out.println(resposta);
@@ -152,7 +152,7 @@ public class TelaInicial extends javax.swing.JFrame {
        tela.getTextoCPF1().setEnabled(false);
        tela.getTextoRG1().setText("0");
        tela.getTextoRG1().setEnabled(false);
-       tela.getTextoCidade1().setText("Mossoró");
+       tela.getTextoCidade1().setText("Mossoro");
        tela.getTextoCidade1().setEnabled(false);
        tela.getTextoLogin().setEnabled(false);
        tela.getTextoSenha().setEnabled(false);

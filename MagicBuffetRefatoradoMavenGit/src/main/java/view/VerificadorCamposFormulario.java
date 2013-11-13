@@ -9,13 +9,13 @@ public class VerificadorCamposFormulario
 {
 	public static boolean cpfEhValido(String CPF)
 	{
-		// considera-se erro CPF's formados por uma sequencia de numeros iguais 
+		// considera-se erro CPFs formados por uma sequencia de numeros iguais 
 		if (CPF.equals("00000000000") || CPF.equals("11111111111") || CPF.equals("22222222222") 
 				|| CPF.equals("33333333333") || CPF.equals("44444444444") || CPF.equals("55555555555") 
 				|| CPF.equals("66666666666") || CPF.equals("77777777777") || CPF.equals("88888888888") 
 				|| CPF.equals("99999999999") || (CPF.length() != 11))
 		{
-			JOptionPane.showMessageDialog(null, "CPF inválido. Por favor, digite um CPF válido");
+			JOptionPane.showMessageDialog(null, "CPF invalido. Por favor, digite um CPF valido");
 			return(false);
 		}
 		char dig10, dig11; 
@@ -23,7 +23,7 @@ public class VerificadorCamposFormulario
 		// "try" - protege o codigo para eventuais erros de conversao de tipo (int)
 		try
 		{
-			//Calculo do 1o dígito verificador
+			//Calculo do 1o digito verificador
 			sm = 0;
 			peso = 10;
 			for(int i = 0; i < 9; i++)
@@ -72,14 +72,14 @@ public class VerificadorCamposFormulario
 			}
 			else
 			{
-				JOptionPane.showMessageDialog(null, "CPF inválido. Por favor, digite um CPF válido");
+				JOptionPane.showMessageDialog(null, "CPF invalido. Por favor, digite um CPF valido");
 				return(false);
 			}
 				 
 		} 
 		catch(InputMismatchException erro)
 		{
-			JOptionPane.showMessageDialog(null, "CPF inválido. Por favor, digite um CPF válido");
+			JOptionPane.showMessageDialog(null, "CPF invalido. Por favor, digite um CPF valido");
 			return(false);
 		}
 			
@@ -90,12 +90,12 @@ public class VerificadorCamposFormulario
 	{
 		if(valorCampo.length() == 0)
 		{
-			JOptionPane.showMessageDialog(null, "campo importante não preenchido:" + nomeCampo);
+			JOptionPane.showMessageDialog(null, "campo importante nao preenchido:" + nomeCampo);
         	return false;
 		}
 		else if(stringEhNumerica(valorCampo) == false)
 		{
-			JOptionPane.showMessageDialog(null, "valor inválido para "+ nomeCampo +", por favor digite um valor válido");
+			JOptionPane.showMessageDialog(null, "valor invalido para "+ nomeCampo +", por favor digite um valor valido");
         	return false;
 		}
 		else
@@ -103,7 +103,7 @@ public class VerificadorCamposFormulario
 			int campoEmInt = Integer.parseInt(valorCampo);
 			if(campoEmInt < 0 || valorCampo.length() > 11)
 			{
-				JOptionPane.showMessageDialog(null, "valor inválido para "+ nomeCampo +", por favor digite um valor válido");
+				JOptionPane.showMessageDialog(null, "valor invalido para "+ nomeCampo +", por favor digite um valor valido");
 	        	return false;
 			}
 			else
@@ -126,7 +126,7 @@ public class VerificadorCamposFormulario
 		}
 		catch(Exception e)
 		{
-			JOptionPane.showMessageDialog(null, "alguma data está inválida, por favor forneça apenas datas válidas");
+			JOptionPane.showMessageDialog(null, "alguma data eh invalida, por favor informe apenas datas validas");
         	return false;
 		}
 	}
@@ -136,13 +136,13 @@ public class VerificadorCamposFormulario
 	{
 		if(valorCampo.length() == 0)
 		{
-			JOptionPane.showMessageDialog(null, "campo importante não preenchido:" + queCampoEhEsse);
+			JOptionPane.showMessageDialog(null, "campo importante nao preenchido:" + queCampoEhEsse);
         	return false;
 		}
 		else if(queCampoEhEsse.length() > 45 || (stringEhNumerica(valorCampo) == true && queCampoEhEsse != "cep") 
 				|| (stringEhNumerica(valorCampo) == false && queCampoEhEsse == "cep"))
 		{
-			JOptionPane.showMessageDialog(null, queCampoEhEsse + " inválido, por favor forneça um valor válido");
+			JOptionPane.showMessageDialog(null, queCampoEhEsse + " invalido, por favor informe um valor valido");
         	return false;
 		}
 		else
@@ -170,12 +170,12 @@ public class VerificadorCamposFormulario
 	{
 		if(precoEmString.length() == 0)
 		{
-			JOptionPane.showMessageDialog(null, "por favor, informe um preço");
+			JOptionPane.showMessageDialog(null, "por favor, informe um preco");
 			return false;
 		}
 		else if(stringEhNumerica(precoEmString) == false || Double.valueOf(precoEmString) < 0)
 		{
-			JOptionPane.showMessageDialog(null, "preço inválido, por favor informe outro preço");
+			JOptionPane.showMessageDialog(null, "preco invalido, por favor informe outro preco");
 			return false;
 		}
 		else
@@ -188,7 +188,7 @@ public class VerificadorCamposFormulario
 	{
 		if(valorDoNome.length() == 0 || valorDoNome.length() > 45 )
     	{
-    		JOptionPane.showMessageDialog(null, "campo " + nomeDoCampo +  " deve ter entre 1 e 45 caracteres. digite um " + nomeDoCampo + " válido");
+    		JOptionPane.showMessageDialog(null, "campo " + nomeDoCampo +  " deve ter entre 1 e 45 caracteres. digite um " + nomeDoCampo + " valido");
     		return false;
     	}
 		else
@@ -206,7 +206,7 @@ public class VerificadorCamposFormulario
 		}
 		else
 		{
-			JOptionPane.showMessageDialog(null, "número de telefone inválido. Por favor, digite um telefone válido");
+			JOptionPane.showMessageDialog(null, "numero de telefone invalido. Por favor, digite um telefone valido");
 			return false;
 		}
 	}
