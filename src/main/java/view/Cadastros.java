@@ -652,7 +652,7 @@ public class Cadastros extends javax.swing.JFrame {
     	  Pessoa p = new Pessoa();
     	  if(categoriaDaPessoa.compareTo(Pessoa.getStringGerente()) == 0 )
     	  {
-    		  //estamos preparando um gerente para cadstro. Ele eh uma extensão de pessoa
+    		  //estamos preparando um gerente para cadstro. Ele eh uma extensao de pessoa
     		  p = new Gerente();
     	  }
     	  p.setCpf(getTextoCPF1().getText());

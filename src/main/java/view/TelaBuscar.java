@@ -184,7 +184,7 @@ public class TelaBuscar extends javax.swing.JFrame
             }
         } else if (MonitorRB.isSelected()) {
 
-            //inicio que pode ser extraído: preparando tabela com resultado da consulta por monitores
+            //inicio que pode ser extraido: preparando tabela com resultado da consulta por monitores
             if (cpfText.getText().equals("")) {
                 this.buscarPessoasPorCategoria(daoConsultaDadosPessoa, pessoaQualquer.getStringMonitor());
 
