@@ -7,3 +7,8 @@ jdk:
 script: 
   - mvn install -DskipTests=false
   - mvn test
+
+services: mysql
+
+before_script:
+  - mysql -e 'create database projetobd;'
