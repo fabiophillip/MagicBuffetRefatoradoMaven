@@ -9,7 +9,7 @@ import conexao.ConectionFactory;
 public class ConectarComBdTest {
 
 	@Test
-	public void conectarComBDtest() 
+	public void testconectarComBD() 
 	{
 		try
 		{
