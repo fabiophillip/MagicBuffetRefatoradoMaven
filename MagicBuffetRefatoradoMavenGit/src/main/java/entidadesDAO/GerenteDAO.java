@@ -32,7 +32,7 @@ public class GerenteDAO extends PessoaDAO {
             pstm.close();
             return true;
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Cadastrar as informações do Gerente", ex.getMessage());
+            mensagem.imprimeErro("Erro ao Cadastrar as informacoes do Gerente", ex.getMessage());
             fechar();
             return false;
         }

@@ -25,7 +25,7 @@ public class Cadastros extends javax.swing.JFrame {
     /**
      * Creates new form Cadastros
      */
-	private GenericDAOInterface interfaceDaoDadosCadastro = FabricaDeDAO.criarPessoaDAO();//um DAO genérico para acesso a cadastro de pessoas
+	private GenericDAOInterface interfaceDaoDadosCadastro = FabricaDeDAO.criarPessoaDAO();//um DAO generico para acesso a cadastro de pessoas
 	
 	
     private javax.swing.JLabel Login;
@@ -295,7 +295,7 @@ public class Cadastros extends javax.swing.JFrame {
         try {
 			textoTelefone1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
 		} catch (ParseException e) {
-			JOptionPane.showMessageDialog(null, "telefone inválido");
+			JOptionPane.showMessageDialog(null, "telefone invalido");
 			e.printStackTrace();
 		}
         botaoSalvar1 = new javax.swing.JButton();
@@ -586,7 +586,7 @@ public class Cadastros extends javax.swing.JFrame {
        
     	if(getTipoCadastro().getText().contains("Monitor"))
     	{
-    		//monitores podem digitar CPFs inválidos e mesmo assim conseguir cadastro
+    		//monitores podem digitar CPFs invalidos e mesmo assim conseguir cadastro
     		String nomeEspecificado = textoNome1.getText();
         	String telefoneEspecificado = textoTelefone1.getText();
         	if(VerificadorCamposFormulario.nomeEhValido(nomeEspecificado, "Nome Da Pessoa") == true &&
@@ -652,7 +652,7 @@ public class Cadastros extends javax.swing.JFrame {
     	  Pessoa p = new Pessoa();
     	  if(categoriaDaPessoa.compareTo(Pessoa.getStringGerente()) == 0 )
     	  {
-    		  //estamos preparando um gerente para cadstro. Ele é uma extensão de pessoa
+    		  //estamos preparando um gerente para cadstro. Ele eh uma extensão de pessoa
     		  p = new Gerente();
     	  }
     	  p.setCpf(getTextoCPF1().getText());

@@ -168,7 +168,7 @@ public class PacoteDAO extends ConectionDAO implements InterfacePacoteDAO {
             return pacotes;
 
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Buscar Vários Pacotes", ex.getMessage());
+            mensagem.imprimeErro("Erro ao Buscar Varios Pacotes", ex.getMessage());
         }
         return null;
     }

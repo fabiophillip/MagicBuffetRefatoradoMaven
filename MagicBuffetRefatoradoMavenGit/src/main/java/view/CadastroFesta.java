@@ -166,7 +166,7 @@ public final class CadastroFesta extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(UsarEndereco);
-        UsarEndereco.setText("Usar Endereço do cliente");
+        UsarEndereco.setText("Usar Endereco do cliente");
         UsarEndereco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsarEnderecoActionPerformed(evt);
@@ -206,7 +206,7 @@ public final class CadastroFesta extends javax.swing.JFrame {
         JTextField textFieldDataInicio = (JTextField)(datainicio.getDateEditor().getUiComponent());
         textFieldDataInicio.setEditable(false);
 
-        estilo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Provençal", "Normal" }));
+        estilo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Provencal", "Normal" }));
 
 
         horaSpin.setMaximum(23);
@@ -465,13 +465,13 @@ public final class CadastroFesta extends javax.swing.JFrame {
          jLabel4.setText("Tema");
          jLabel5.setText("Pacote");
          jLabel6.setText("Data Inico");
-         jLabel7.setText("Data FIm");
+         jLabel7.setText("Data Fim");
          jLabel8.setText("Hora Inicial");
          jLabel9.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
          jLabel9.setText("Estilo");
          jLabel10.setText("Rua");
          jLabel11.setText("Bairro");
-         jLabel12.setText("Nº");
+         jLabel12.setText("Num");
          jLabel13.setText("CEP");
          jLabel14.setText("Cidade");
          jLabel15.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
@@ -544,7 +544,7 @@ public final class CadastroFesta extends javax.swing.JFrame {
             this.checkCliente = true;
         }
         else {
-            JOptionPane.showMessageDialog(this, "CPF nãõ encontrado, cadastre o cliente");
+            JOptionPane.showMessageDialog(this, "CPF nao encontrado, cadastre o cliente");
         }
         
         
@@ -587,7 +587,7 @@ public final class CadastroFesta extends javax.swing.JFrame {
         	System.out.println(festa);
         	int k = 2;
         	if(festa.isEmpty()){
-          JOptionPane.showMessageDialog(this,"Data Disponível");            
+          JOptionPane.showMessageDialog(this,"Data Disponivel");            
         	}
       
         	else{
@@ -625,7 +625,7 @@ public final class CadastroFesta extends javax.swing.JFrame {
 			ArrayList<Festa> fest = festas.buscarFesta(datainit);
 			for (int i = 0; i < fest.size(); i++) {
 			    if(!fest.get(i).isExterno()){
-			        mensagem = mensagem + " Buffet já está locado nesse dia\n";
+			        mensagem = mensagem + " Buffet jah estah locado nesse dia\n";
 			    }
 			}
 	         }
@@ -635,7 +635,7 @@ public final class CadastroFesta extends javax.swing.JFrame {
 
 
 
-    /*a funcao retorna uma string que � tipo um log sobre se os itens locados estao disponiveis para a data ou nao*/
+    /*a funcao retorna uma string que eh tipo um log sobre se os itens locados estao disponiveis para a data ou nao*/
 	private String verificarSeItensLocadosEstaoDisponiveisParaData(InterfaceItemDAO it, ArrayList<String> itensLocados) {
 		String mensagem = "";
 		int quantidade = 0;
@@ -653,7 +653,7 @@ public final class CadastroFesta extends javax.swing.JFrame {
 		            
 		            Item iten = it.buscarNome(iL);
 		            if(iten.getQuantidadeTotal() > quantidade){
-		                mensagem = mensagem + "Não há " + iL + " disponivel(eis) para a data\n";
+		                mensagem = mensagem + "Nao ha " + iL + " disponivel(eis) para a data\n";
 		            }
 		            else {
 		                mensagem = mensagem + iL + " esta disponivel para a data\n";
@@ -813,7 +813,7 @@ public final class CadastroFesta extends javax.swing.JFrame {
     		int valorDaComparacao = dataInicial.compareTo(dataFinal);
     		if(valorDaComparacao > 0)
     		{
-    			JOptionPane.showMessageDialog(this, "a data de in�cio est� maior que a do fim, por favor insira outra data");
+    			JOptionPane.showMessageDialog(this, "a data de inicio estah maior que a do fim, por favor insira outra data");
     			return true;
     		}
     		else
@@ -842,7 +842,7 @@ public final class CadastroFesta extends javax.swing.JFrame {
         		&& VerificadorCamposFormulario.campoComAte25CaracteresEhValido(cep, "cep") == true
         		&& VerificadorCamposFormulario.campoComAte25CaracteresEhValido(rua, "rua") == true
         		&& VerificadorCamposFormulario.campoComAte25CaracteresEhValido(cidade, "cidade") == true 
-        		&& VerificadorCamposFormulario.campoNumericoDeValorAte11EhValido(textoNumero.getText(), "n�mero") == true)
+        		&& VerificadorCamposFormulario.campoNumericoDeValorAte11EhValido(textoNumero.getText(), "numero") == true)
         {
         	return true;
         }
@@ -900,7 +900,7 @@ public final class CadastroFesta extends javax.swing.JFrame {
 
     private void UsarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsarEnderecoActionPerformed
         if(textocpf.getText().equals("")){
-            JOptionPane.showMessageDialog(this, "Digite o número do cpf de um cliente");
+            JOptionPane.showMessageDialog(this, "Digite o numero do cpf de um cliente");
         }
         textoBairro.setEnabled(false);
         textoCEP.setEnabled(false);
