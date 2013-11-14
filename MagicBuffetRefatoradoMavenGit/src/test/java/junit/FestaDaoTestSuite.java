@@ -30,5 +30,20 @@ public class FestaDaoTestSuite {
 		assertEquals(retornoPesquisaFesta.getQuantidadeConvidados(), 0);
 		assertEquals(retornoPesquisaFesta.getTema(), null);
 	}
+	
+	@Test
+	public void testProcurarFestaComSqlInjection() {
+		Festa retornoPesquisaFesta = (Festa) festaDao.buscar("um' pronto para viajar?");//ele retorna um objeto festa vazio se não tiver festa cadastrada
+		assertEquals(retornoPesquisaFesta.getDataFim(), null);
+		assertEquals(retornoPesquisaFesta.getDataInicio(), null);
+		assertEquals(retornoPesquisaFesta.getEstiloFesta(), null);
+		assertEquals(retornoPesquisaFesta.getHoraInicio(), null);
+		assertEquals(retornoPesquisaFesta.getIdFesta(), null);
+		assertEquals(retornoPesquisaFesta.getLocal(), null);
+		assertEquals(retornoPesquisaFesta.getPacote(), null);
+		assertEquals(retornoPesquisaFesta.getPessoaCPF(), null);
+		assertEquals(retornoPesquisaFesta.getQuantidadeConvidados(), 0);
+		assertEquals(retornoPesquisaFesta.getTema(), null);
+	}
 
 }
