@@ -45,39 +45,31 @@ before_script:
   - mysql -e 'USE projetobd;CREATE  TABLE IF NOT EXISTS localizacao (IdLocalizacao VARCHAR(45) NOT NULL ,CEP VARCHAR(45) NOT NULL ,Numero INT(11) NOT NULL ,Rua VARCHAR(45) NOT NULL ,Bairro VARCHAR(45) NOT NULL ,Cidade VARCHAR(45) NOT NULL ,PRIMARY KEY (IdLocalizacao) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;'
   - mysql -e 'SHOW WARNINGS;'
 
+  - mysql -e 'USE projetobd;DROP TABLE IF EXISTS festa;'
 
-- mysql -e 'SHOW WARNINGS;'
+  - mysql -e 'SHOW WARNINGS;'
+  - mysql -e 'USE projetobd;CREATE  TABLE IF NOT EXISTS festa (IDFesta INT NOT NULL AUTO_INCREMENT , clienteCPF VARCHAR(11) NOT NULL , IdTema VARCHAR(11) NOT NULL , localizacaoCEP VARCHAR(45) NOT NULL , IdPacote VARCHAR(11) NOT NULL , DataInicio DATETIME NOT NULL , DataFIm DATETIME NULL , HoraInicio TIME NOT NULL , Externo TINYINT(1) NULL , QuantidadeConvidados INT(11) NOT NULL , EstiloFesta VARCHAR(45) NOT NULL , PRIMARY KEY (IDFesta) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8 PACK_KEYS = DEFAULT;'
 
-- mysql -e 'USE projetobd;DROP TABLE IF EXISTS festa;'
+  - mysql -e 'SHOW WARNINGS;'
 
-- mysql -e 'SHOW WARNINGS;'
-- mysql -e 'USE projetobd;CREATE  TABLE IF NOT EXISTS festa (IDFesta INT NOT NULL AUTO_INCREMENT , clienteCPF VARCHAR(11) NOT NULL , IdTema VARCHAR(11) NOT NULL , localizacaoCEP VARCHAR(45) NOT NULL , IdPacote VARCHAR(11) NOT NULL , DataInicio DATETIME NOT NULL , DataFIm DATETIME NULL , HoraInicio TIME NOT NULL , Externo TINYINT(1) NULL , QuantidadeConvidados INT(11) NOT NULL , EstiloFesta VARCHAR(45) NOT NULL , PRIMARY KEY (IDFesta) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8 PACK_KEYS = DEFAULT;'
+  - mysql -e 'USE projetobd;DROP TABLE IF EXISTS item'
 
+  - mysql -e 'USE projetobd;CREATE  TABLE IF NOT EXISTS item (IDItem VARCHAR(45) NOT NULL , NomeItem VARCHAR(45) NOT NULL ,QuantidadeTotal INT(11) NOT NULL , PrecoUnidade DOUBLE NOT NULL , PRIMARY KEY (IDItem) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;'
 
-- mysql -e 'SHOW WARNINGS;'
+  - mysql -e 'SHOW WARNINGS;'
 
-- mysql -e 'USE projetobd;DROP TABLE IF EXISTS item'
+  - mysql -e  'USE projetobd;DROP TABLE IF EXISTS pessoa_monitora_item ;'
+  - mysql -e 'SHOW WARNINGS;'
+  - mysql -e 'USE projetobd;CREATE TABLE IF NOT EXISTS pessoa_monitora_item (pessoa_CPF VARCHAR(11) NOT NULL , item_IDItem INT NOT NULL , PRIMARY KEY (pessoa_CPF, item_IDItem) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;'
 
-- mysql -e 'USE projetobd;CREATE  TABLE IF NOT EXISTS item (IDItem VARCHAR(45) NOT NULL , NomeItem VARCHAR(45) NOT NULL ,QuantidadeTotal INT(11) NOT NULL , PrecoUnidade DOUBLE NOT NULL , PRIMARY KEY (IDItem) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;'
+  - mysql -e 'SHOW WARNINGS;'
 
+  - mysql -e 'USE projetobd;DROP TABLE IF EXISTS pacote_contem_item ;'
+  - mysql -e 'SHOW WARNINGS;'
+  - mysql -e 'USE projetobd;CREATE  TABLE IF NOT EXISTS pacote_contem_item (chavePacote VARCHAR(45) NOT NULL ,chaveItem VARCHAR(45) NOT NULL ,nomePacote VARCHAR(45) NOT NULL ,PRIMARY KEY (chavePacote, chaveItem) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;'
 
-
-- mysql -e 'SHOW WARNINGS;'
-
-- msql -e  'USE projetobd;DROP TABLE IF EXISTS pessoa_monitora_item ;'
-- mysql -e 'SHOW WARNINGS;'
-- mysql -e 'USE projetobd;CREATE TABLE IF NOT EXISTS pessoa_monitora_item (pessoa_CPF VARCHAR(11) NOT NULL , item_IDItem INT NOT NULL , PRIMARY KEY (pessoa_CPF, item_IDItem) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;'
-
-
-
-- mysql -e 'SHOW WARNINGS;'
-
-- mysql -e 'USE projetobd;DROP TABLE IF EXISTS pacote_contem_item ;'
-- mysql -e 'SHOW WARNINGS;'
-- mysql -e 'USE projetobd;CREATE  TABLE IF NOT EXISTS pacote_contem_item (chavePacote VARCHAR(45) NOT NULL ,chaveItem VARCHAR(45) NOT NULL ,nomePacote VARCHAR(45) NOT NULL ,PRIMARY KEY (chavePacote, chaveItem) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;'
-
-- mysql -e 'SHOW WARNINGS;'
-- mysql -e 'USE projetobd;'
-- mysql -e 'SET SQL_MODE=@OLD_SQL_MODE;'
-- mysql -e 'SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;'
-- mysql -e 'SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;'
+  - mysql -e 'SHOW WARNINGS;'
+  - mysql -e 'USE projetobd;'
+  - mysql -e 'SET SQL_MODE=@OLD_SQL_MODE;'
+  - mysql -e 'SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;'
+  - mysql -e 'SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;'
