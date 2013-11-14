@@ -8,6 +8,7 @@ script:
   - mvn install -DskipTests=false
   - mvn test
   
+  
 services: mysql
 
 
