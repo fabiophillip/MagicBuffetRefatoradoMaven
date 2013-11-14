@@ -66,7 +66,7 @@ public class TemaDAO extends  ConectionDAO implements DAOComBuscaMultiplaInterfa
     @Override
     public boolean atualizar(Object object) {
         String atualizar = "UPDATE tema SET "
-                + "Tnome = ?,"                
+                + "Tnome = ? "                
                 + "WHERE IdTema = ?";
 
         conectar(atualizar);
