@@ -18,6 +18,9 @@ public class TemaDAOTest
 	public void setUp() throws Exception 
 	{
 		temaDAO = new TemaDAO();
+		
+		Tema t = new Tema("mlp","my little pony");
+		temaDAO.remover(t);
 	}
 
 	
