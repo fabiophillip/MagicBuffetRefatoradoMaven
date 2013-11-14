@@ -20,8 +20,7 @@ before_script:
   - mysql -e 'DROP DATABASE IF EXISTS projetobd ;'
   - mysql -e 'CREATE DATABASE IF NOT EXISTS projetobd DEFAULT CHARACTER SET utf8 ;'
   - mysql -e 'SHOW WARNINGS;'
-  - mysql -e 'USE projetobd;'
-  - mysql -e 'DROP TABLE IF EXISTS gerente;'
+  - mysql -e 'USE projetobd;DROP TABLE IF EXISTS gerente;'
   - mysql -e 'SHOW WARNINGS;'
   - mysql -e "CREATE  TABLE IF NOT EXISTS gerente ('Login' VARCHAR(45) NOT NULL ,'Senha' VARCHAR(45) NULL , PRIMARY KEY ('Login') ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;"
   - mysql -e 'SHOW WARNINGS;'
