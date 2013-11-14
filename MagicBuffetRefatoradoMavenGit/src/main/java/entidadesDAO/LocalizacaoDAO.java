@@ -161,7 +161,7 @@ public class LocalizacaoDAO extends ConectionDAO implements GenericDAOInterface,
 
         String buscarTodos = "SELECT *  FROM localizacao";
 
-        ArrayList<Object> locais = new ArrayList<>();
+        ArrayList<Object> locais = new ArrayList<Object>();
         ResultSet result;
         conectar(buscarTodos);
 

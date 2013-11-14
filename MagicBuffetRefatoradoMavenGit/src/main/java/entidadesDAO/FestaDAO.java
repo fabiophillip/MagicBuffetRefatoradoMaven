@@ -50,7 +50,7 @@ public class FestaDAO extends ConectionDAO implements InterfaceFestaDAO {
     public ArrayList<Festa> buscarFesta(String data) {
         /**/
         String buscarFestas = "SELECT * FROM festa WHERE datainicio = '" + data + "'";
-        ArrayList<Festa> festas = new ArrayList<>();
+        ArrayList<Festa> festas = new ArrayList<Festa>();
         ResultSet result;
         
         conectar(buscarFestas);
@@ -71,7 +71,7 @@ public class FestaDAO extends ConectionDAO implements InterfaceFestaDAO {
     public ArrayList<Object> buscar() {
         
         String buscarFestas = "SELECT * FROM festa " + ";";
-        ArrayList<Object> festas = new ArrayList<>();
+        ArrayList<Object> festas = new ArrayList<Object>();
         ResultSet result;
         
         conectar(buscarFestas);

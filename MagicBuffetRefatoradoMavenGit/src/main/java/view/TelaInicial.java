@@ -205,7 +205,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private void PACOTEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PACOTEActionPerformed
         DefaultTableModel modelo;     
         ArrayList<Object> ListaPacotes = DAOTrabalhaComItens.buscar();
-        ArrayList<Item> it = new ArrayList<>();
+        ArrayList<Item> it = new ArrayList<Item>();
         
         for(Object p : ListaPacotes)
             it.add((Item)p);
