@@ -95,7 +95,7 @@ public final class CadastroFesta extends javax.swing.JFrame {
     	DAOFestas = FabricaDeDAO.criarFestaDAO();
     	DAOLocalizacao = FabricaDeDAO.criarLocalizacaoDAO();
         ArrayList<Object> temaObj  = DAOTemas.buscar();;
-        ArrayList<Tema> tema  = new ArrayList<>();
+        ArrayList<Tema> tema  = new ArrayList<Tema>();
         
         for(Object t : temaObj)
             tema.add((Tema)t);
@@ -114,7 +114,7 @@ public final class CadastroFesta extends javax.swing.JFrame {
     
     public void prencherOpcoesPacote(){
         ArrayList<Object> pacote =  this.DAOPacotes.buscar();
-        ArrayList<Pacote> pk = new ArrayList<>();                
+        ArrayList<Pacote> pk = new ArrayList<Pacote>();                
         
         for(Object p : pacote)
             pk.add((Pacote)p);
@@ -570,8 +570,8 @@ public final class CadastroFesta extends javax.swing.JFrame {
         InterfacePacoteDAO pacote = FabricaDeDAO.criarPacoteDAO();
         Pacote p = pacote.buscarPorNome(meuPacote);
         ArrayList<Item> itensMeuPacote = it.buscarItensPacote(p);        
-        ArrayList<String> itensOk = new ArrayList<>();
-        ArrayList<String> itensLocados = new ArrayList<>();
+        ArrayList<String> itensOk = new ArrayList<String>();
+        ArrayList<String> itensLocados = new ArrayList<String>();
         
         InterfaceFestaDAO festas = FabricaDeDAO.criarFestaDAO();
         ArrayList<Festa> festa;                  

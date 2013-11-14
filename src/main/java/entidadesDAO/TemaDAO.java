@@ -112,7 +112,7 @@ public class TemaDAO extends  ConectionDAO implements DAOComBuscaMultiplaInterfa
         
         String BuscaTodos = "SELECT * FROM tema ";
         
-        ArrayList<Object> temas = new ArrayList<>();
+        ArrayList<Object> temas = new ArrayList<Object>();
         ResultSet result;
         conectar(BuscaTodos);
         try {

@@ -148,7 +148,7 @@ public class ItemDAO extends ConectionDAO implements  InterfaceItemDAO {
 
         String buscarItens = "SELECT * FROM item ";
         
-        ArrayList<Object> itens = new ArrayList<>();
+        ArrayList<Object> itens = new ArrayList<Object>();
         ResultSet result;
         conectar(buscarItens);
 
@@ -177,7 +177,7 @@ public class ItemDAO extends ConectionDAO implements  InterfaceItemDAO {
         String buscarItens = "SELECT * FROM pacote_contem_item WHERE nomePacote LIKE '" 
                                 + pacote.getPacoteNome() + "'";
         
-        ArrayList<Item> itens = new ArrayList<>();
+        ArrayList<Item> itens = new ArrayList<Item>();
         
         ResultSet result;
         conectar(buscarItens);

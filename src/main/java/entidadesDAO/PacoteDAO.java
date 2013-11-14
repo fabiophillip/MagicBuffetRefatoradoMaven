@@ -152,7 +152,7 @@ public class PacoteDAO extends ConectionDAO implements InterfacePacoteDAO {
     public ArrayList<Object> buscar() {
 
         String buscapacotes = "SELECT * FROM pacote";
-        ArrayList<Object> pacotes = new ArrayList<>();
+        ArrayList<Object> pacotes = new ArrayList<Object>();
         ResultSet result;
         conectar(buscapacotes);
         try {

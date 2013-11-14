@@ -157,7 +157,7 @@ public class PessoaDAO extends ConectionDAO implements InterfacePessoaDAO {
     public ArrayList<Pessoa> buscarPessoas(String tipo) {
 
             String sql = "SELECT * FROM pessoa WHERE TipoPessoa = '"+ tipo + "'";
-        ArrayList<Pessoa> pessoas = new ArrayList<>();
+        ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
         ResultSet resultSetResultadoBusca;
         conectar(sql);
         
@@ -181,7 +181,7 @@ public class PessoaDAO extends ConectionDAO implements InterfacePessoaDAO {
     public ArrayList<Pessoa> buscarPessoaNome(String nome) {
 
         String sql = "SELECT * FROM pessoa WHERE pnome LIKE '" + nome + "'";
-        ArrayList<Pessoa> pessoas = new ArrayList<>();
+        ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
         ResultSet result;
 
         try {

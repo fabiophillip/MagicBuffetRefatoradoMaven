@@ -142,7 +142,7 @@ public class ResultadoTabela extends javax.swing.JFrame {
 		    
 		    
 		    ArrayList<Object> objetosTemasCadastrados = DAOTemas.buscar();
-		    ArrayList<Tema> temasCadastrados = new ArrayList<>();
+		    ArrayList<Tema> temasCadastrados = new ArrayList<Tema>();
 		    
 		    for(Object objetoTemaCadastrado : objetosTemasCadastrados)
 		        temasCadastrados.add((Tema) objetoTemaCadastrado);
