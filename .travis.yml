@@ -114,3 +114,4 @@ before_script:
   - mysql -e 'USE projetobd;SELECT * FROM festa;'
   - mysql -e 'USE projetobd;SELECT * FROM festa;'
   - mysql -e 'USE projetobd;DESCRIBE festa;'
+  
