@@ -2,6 +2,8 @@ package junit;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,33 +29,59 @@ public class TemaDAOTest
 		assertEquals(conseguiuCriar,true);
 	}
 	
-	@Test
-	public void testCriarTemaInvalido() 
-	{
-		//tema com mais de 45 caracteres
-		Tema t = new Tema("mlp", "wfckljkscjcjcsdljdvlijsdlkjbdlkbsjdkbsjkldjbkldksdljbdkbdjbdlkbsdklsbdjbkljbkljbdskjbsdlkbdjklbdsjbkdljblkjbdslkjbsdklsbdljbslkjbslkjbslkjsbdkldbjskdbjkbdsljkjbdkljblkjbklbsjkbsljlbskjlbskjbdsjjblkbdjlksblkjbslkj");
-		
-		boolean conseguiuCriar = temaDAO.criar(t);
-		
-		assertEquals(conseguiuCriar,false);
-	}
 	
 	@Test
 	public void testBuscarPorTemaValido() 
 	{
-		String idTemaMoranguinho = "43";
-		Tema t = (Tema) temaDAO.buscar(idTemaMoranguinho);
-		assertEquals(t.getTnome(),"Moranguinho");
+		String idTemaPica = "21";
+		Tema t = (Tema) temaDAO.buscar(idTemaPica);
+		assertEquals(t.getTnome(),"Pica-pau");
 	}
 	
 	@Test
-	public void testBuscarPorTemaInvalido() 
+	public void atualizarTemaValido() 
 	{
-		String idTemaInvalido =  "wfckljkscjcjcsdljdvlijsdlkjbdlkbsjdkbsjkldjbkldksdljbdkbdjbdlkbsdklsbdjbkljbkljbdskjbsdlkbdjklbdsjbkdljblkjbdslkjbsdklsbdljbslkjbslkjbslkjsbdkldbjskdbjkbdsljkjbdkljblkjbklbsjkbsljlbskjlbskjbdsjjblkbdjlksblkjbslkj";
-		Tema t = (Tema) temaDAO.buscar(idTemaInvalido);
+		String idTemaMoranguinho = "43";
+		String novoTituloFestaMoranguinho = "berry bitty adventures";
+		Tema t = new Tema(idTemaMoranguinho,novoTituloFestaMoranguinho);
+		boolean conseguiuAtualizar = temaDAO.atualizar(t);
 		
-		assertEquals(t.getIdTema(),null);
-		assertEquals(t.getTnome(),null);
+		assertEquals(conseguiuAtualizar,true);
 	}
-
+	
+	@Test
+	public void removerTemaValido() 
+	{
+		//criarei um tema e depois o removerei
+		String idNovoTema = "llpsy";
+		String novoTema = "lalaloopsy";
+		Tema t = new Tema(idNovoTema,novoTema);
+		boolean conseguiuCriar = temaDAO.criar(t);
+		
+		if(conseguiuCriar == true)
+		{
+			//vamos remove-lo
+			boolean conseguiuRemover = temaDAO.remover(t);
+			
+			assertEquals(conseguiuRemover,true);
+		}
+		else
+		{
+			fail("nao conseguiu criar o tema para deletar");
+		}
+		
+	}
+	
+	@Test
+	public void testBuscarTodosOsTemas() 
+	{
+		ArrayList<Object> temas = temaDAO.buscar();
+		if(temas.size() == 0)
+		{
+			fail("nao conseguiu pegar nem os temas criados por default");
+		}
+	}
+	
+	
+	
 }
