@@ -32,11 +32,6 @@ public class ConectionFactory {
         }    
     }
    
-    public static void main(String[] args) {
-        
-        Connection connection = new ConectionFactory().getConnection();
-        System.out.println("Conexao aberta");
-    }
 }
 
 
