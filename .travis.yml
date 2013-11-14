@@ -90,3 +90,29 @@ before_script:
   - mysql -e 'USE projetobd;INSERT INTO localizacao VALUES("11","50000000", 158, "Rua Padre Cicero", "Acaua", "Mossoro");'
   - mysql -e 'USE projetobd;INSERT INTO localizacao VALUES("12","59210343", 30, "Rua do Meio", "Rocas", "Natal");'
   - mysql -e 'USE projetobd;INSERT INTO localizacao VALUES("13","59000212", 9, "Rua Mossoro", "Centro", "Assu");'
+  
+  
+  - mysql -e 'USE projetobd;SELECT * FROM item;'
+  - mysql -e "USE projetobd;INSERT INTO item VALUES('9090','Pula-pula', 3, 80);"
+  - mysql -e "USE projetobd;INSERT INTO item VALUES('123','Cama elastica', 2, 100);"
+  - mysql -e "USE projetobd;INSERT INTO item VALUES('GIF','Escorrego', 2, 50);"	
+  - mysql -e "USE projetobd;INSERT INTO item VALUES('12','Algodao doce', 1, 60);"	
+
+  - mysql -e 'USE projetobd;SELECT * FROM tema;'
+  - mysql -e "USE projetobd;INSERT INTO tema VALUES('21','Pica-pau');"
+  - mysql -e "USE projetobd;INSERT INTO tema VALUES('43','Moranguinho');"
+  - mysql -e "USE projetobd;INSERT INTO tema VALUES('41','Meninas Super Poderosas');"
+  - mysql -e "USE projetobd;INSERT INTO tema VALUES('90','Ben 10');"
+  - mysql -e "USE projetobd;INSERT INTO tema VALUES('10','Cinderela');"
+
+  - mysql -e "USE projetobd;DELETE FROM tema WHERE idTema = '5';"
+  - mysql -e 'USE projetobd;DELETE FROM pacote;'
+  - mysql -e 'USE projetobd;DESCRIBE festa;'
+  - mysql -e 'USE projetobd;SELECT * FROM item;'
+  - mysql -e "USE projetobd;SELECT * FROM item WHERE IdItem LIKE  'MFcl';"
+  - mysql -e 'USE projetobd;SELECT * FROM pacote_contem_item;'
+  - mysql -e 'USE projetobd;SELECT * FROM pessoa;'
+  - mysql -e 'USE projetobd;SELECT * FROM festa;'
+  - mysql -e 'USE projetobd;SELECT * FROM festa;'
+  - mysql -e 'USE projetobd;DESCRIBE festa;'
+  
