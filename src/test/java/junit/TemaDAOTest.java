@@ -47,12 +47,20 @@ public class TemaDAOTest
 	@Test
 	public void atualizarTemaValido() 
 	{
-		String idTemaMoranguinho = "43";
-		String novoTituloFestaMoranguinho = "berry bitty adventures";
-		Tema t = new Tema(idTemaMoranguinho,novoTituloFestaMoranguinho);
-		boolean conseguiuAtualizar = temaDAO.atualizar(t);
+		Tema t = new Tema("mlp","my little pony");
+		boolean conseguiuCriar = temaDAO.criar(t);
 		
-		assertEquals(conseguiuAtualizar,true);
+		if(conseguiuCriar == false)
+		{
+			fail("nao conseguiu nem criar o tema para atualizar");
+		}
+		else
+		{
+			Tema t2 = new Tema("mlp","a amizade eh magica");
+			boolean conseguiuAtualizar = temaDAO.atualizar(t2);
+			
+			assertEquals(conseguiuAtualizar,true);
+		}
 	}
 	
 	@Test
