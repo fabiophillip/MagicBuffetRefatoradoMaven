@@ -24,4 +24,23 @@ before_script:
   - mysql -e 'SHOW WARNINGS;'
   - mysql -e 'USE projetobd;CREATE  TABLE IF NOT EXISTS gerente (Login VARCHAR(45) NOT NULL ,Senha VARCHAR(45) NULL , PRIMARY KEY (Login) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;'
   - mysql -e 'SHOW WARNINGS;'
-  - mysql -e "USE projetobd;CREATE UNIQUE INDEX Login_UNIQUE ON gerente (Login ASC) ;"
+  - mysql -e 'USE projetobd;CREATE UNIQUE INDEX Login_UNIQUE ON gerente (Login ASC) ;'
+  - mysql -e 'SHOW WARNINGS;'
+  - mysql -e 'USE projetobd;DROP TABLE IF EXISTS pessoa;'
+  - mysql -e 'SHOW WARNINGS;'
+  - mysql -e 'USE projetobd;CREATE  TABLE IF NOT EXISTS pessoa (id INT NOT NULL AUTO_INCREMENT ,CPF VARCHAR(45) NOT NULL ,gerente_Login VARCHAR(45) NULL DEFAULT NULL ,PNome VARCHAR(45) NOT NULL ,RG INT(11) NULL ,Rua VARCHAR(45) NULL ,Numero INT(11) NULL ,Bairro VARCHAR(45) NULL ,CEP VARCHAR(45) NULL ,TipoPessoa ENUM(CLIENTE,MONITOR,GERENTE) NOT NULL ,Telefone VARCHAR(45) NOT NULL ,Cidade VARCHAR(45) NULL ,PRIMARY KEY (id) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;'
+
+  - mysql -e 'USE projetobd;DROP TABLE IF EXISTS tema;'
+  - mysql -e 'SHOW WARNINGS;'
+  - mysql -e 'USE projetobd;CREATE  TABLE IF NOT EXISTS tema (IdTema VARCHAR(45) NOT NULL ,Tnome VARCHAR(45) NOT NULL ,PRIMARY KEY (IdTema) )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;'
+  - mysql -e 'SHOW WARNINGS;'
+
+  - mysql -e 'USE projetobd;DROP TABLE IF EXISTS pacote;'
+  - mysql -e 'SHOW WARNINGS;'
+  - mysql -e 'USE projetobd;CREATE  TABLE IF NOT EXISTS pacote (IdPacote VARCHAR(45) NOT NULL ,NomePacote VARCHAR(45) NOT NULL ,PrecoPacote DOUBLE NOT NULL ,PRIMARY KEY (IdPacote) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;'
+  - mysql -e 'SHOW WARNINGS;'
+
+  - mysql -e 'USE projetobd;DROP TABLE IF EXISTS localizacao;'
+  - mysql -e 'SHOW WARNINGS;'
+  - mysql -e 'USE projetobd;CREATE  TABLE IF NOT EXISTS localizacao (IdLocalizacao VARCHAR(45) NOT NULL ,CEP VARCHAR(45) NOT NULL ,Numero INT(11) NOT NULL ,Rua VARCHAR(45) NOT NULL ,Bairro VARCHAR(45) NOT NULL ,Cidade VARCHAR(45) NOT NULL ,PRIMARY KEY (IdLocalizacao) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;'
+  - mysql -e 'SHOW WARNINGS;'
