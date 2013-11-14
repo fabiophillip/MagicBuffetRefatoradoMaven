@@ -96,6 +96,8 @@ before_script:
   - mysql -e "USE projetobd;INSERT INTO item VALUES('123','Cama elastica', 2, 100);"
   - mysql -e "USE projetobd;INSERT INTO item VALUES('GIF','Escorrego', 2, 50);"
   - mysql -e "USE projetobd;INSERT INTO item VALUES('12','Algodao doce', 1, 60);"
+  
+ 
 
   - mysql -e 'USE projetobd;SELECT * FROM tema;'
   - mysql -e "USE projetobd;INSERT INTO tema VALUES('21','Pica-pau');"
