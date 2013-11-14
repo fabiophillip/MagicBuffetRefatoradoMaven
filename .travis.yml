@@ -82,3 +82,11 @@ before_script:
   - mysql -e 'USE projetobd;SELECT * FROM pacote_contem_item;'
   - mysql -e 'USE projetobd;INSERT INTO pacote VALUES(50, "pacote Basico", 120);'
   - mysql -e 'USE projetobd;INSERT INTO pacote VALUES(11, "pacote Intermediario", 400);'
+  - mysql -e 'USE projetobd;INSERT INTO pacote VALUES(12, "pacote Completo", 140);'
+  - mysql -e 'USE projetobd;INSERT INTO pacote VALUES(13,"pacote VIP", 900);'
+  - mysql -e 'USE projetobd;SELECT * FROM localizacao;'
+
+  - mysql -e 'USE projetobd;INSERT INTO localizacao VALUES("10","51000000", 90, "Rua Carmosina", "Santo Antonio", "Mossoro");'
+  - mysql -e 'USE projetobd;INSERT INTO localizacao VALUES("11","50000000", 158, "Rua Padre Cicero", "Acaua", "Mossoro");'
+  - mysql -e 'USE projetobd;INSERT INTO localizacao VALUES("12","59210343", 30, "Rua do Meio", "Rocas", "Natal");'
+  - mysql -e 'USE projetobd;INSERT INTO localizacao VALUES("13","59000212", 9, "Rua Mossoro", "Centro", "Assu");'
