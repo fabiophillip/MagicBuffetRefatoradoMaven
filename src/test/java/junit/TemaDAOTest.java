@@ -21,6 +21,9 @@ public class TemaDAOTest
 		
 		Tema t = new Tema("mlp","my little pony");
 		temaDAO.remover(t);
+		
+		Tema t2= new Tema("llpsy","lalaloopsy");
+		temaDAO.remover(t2);
 	}
 
 	
