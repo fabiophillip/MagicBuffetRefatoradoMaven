@@ -15,12 +15,12 @@ before_script:
   - mysql -e 'SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;'
   - mysql -e 'SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;'
   - mysql -e "SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';"
-  - mysql -e "DROP database IF EXISTS `projetobd` ;"
-  - mysql -e "CREATE database IF NOT EXISTS `projetobd` DEFAULT CHARACTER SET utf8 ;"
+  - mysql -e "DROP database IF EXISTS 'projetobd' ;"
+  - mysql -e "CREATE database IF NOT EXISTS 'projetobd' DEFAULT CHARACTER SET utf8 ;"
   - mysql -e 'SHOW WARNINGS;'
-  - mysql -e "USE `projetobd` ;"
-  - mysql -e "DROP TABLE IF EXISTS `gerente` ;"
+  - mysql -e "USE 'projetobd' ;"
+  - mysql -e "DROP TABLE IF EXISTS 'gerente' ;"
   - mysql -e 'SHOW WARNINGS;'
-  - mysql -e "CREATE  TABLE IF NOT EXISTS `gerente` (`Login` VARCHAR(45) NOT NULL ,`Senha` VARCHAR(45) NULL , PRIMARY KEY (`Login`) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;"
+  - mysql -e "CREATE  TABLE IF NOT EXISTS 'gerente' ('Login' VARCHAR(45) NOT NULL ,'Senha' VARCHAR(45) NULL , PRIMARY KEY ('Login') ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;"
   - mysql -e 'SHOW WARNINGS;'
-  - mysql -e "CREATE UNIQUE INDEX `Login_UNIQUE` ON `gerente` (`Login` ASC) ;"
+  - mysql -e "CREATE UNIQUE INDEX 'Login_UNIQUE' ON 'gerente' ('Login' ASC) ;"
