@@ -6,8 +6,7 @@ jdk:
   
 script: 
   - mvn install -DskipTests=false
-  - mvn test 
-  - mvn cobertura:cobertura coveralls:cobertura
+  - mvn test cobertura:cobertura coveralls:cobertura
   
 services: mysql
 
