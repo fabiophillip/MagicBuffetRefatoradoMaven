@@ -22,6 +22,6 @@ before_script:
   - mysql -e 'SHOW WARNINGS;'
   - mysql -e 'USE projetobd;DROP TABLE IF EXISTS gerente;'
   - mysql -e 'SHOW WARNINGS;'
-  - mysql -e "USE projetobd;CREATE  TABLE IF NOT EXISTS gerente ('Login' VARCHAR(45) NOT NULL ,'Senha' VARCHAR(45) NULL , PRIMARY KEY ('Login') ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;"
+  - mysql -e 'USE projetobd;CREATE  TABLE IF NOT EXISTS gerente (Login VARCHAR(45) NOT NULL ,Senha VARCHAR(45) NULL , PRIMARY KEY (Login) ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;'
   - mysql -e 'SHOW WARNINGS;'
-  - mysql -e "USE projetobd;CREATE UNIQUE INDEX 'Login_UNIQUE' ON gerente ('Login' ASC) ;"
+  - mysql -e "USE projetobd;CREATE UNIQUE INDEX Login_UNIQUE ON gerente (Login ASC) ;"
