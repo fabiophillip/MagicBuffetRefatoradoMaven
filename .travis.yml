@@ -6,7 +6,7 @@ jdk:
   
 script: 
   - mvn install -DskipTests=false
-  - mvn test jacoco:report coveralls:jacoco
+  - mvn test cobertura:cobertura coveralls:cobertura
   
 services: mysql
 
