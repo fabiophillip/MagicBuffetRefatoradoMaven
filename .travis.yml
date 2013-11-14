@@ -70,6 +70,3 @@ before_script:
 
   - mysql -e 'SHOW WARNINGS;'
   - mysql -e 'USE projetobd;'
-  - mysql -e 'SET SQL_MODE=@OLD_SQL_MODE;'
-  - mysql -e 'SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;'
-  - mysql -e 'SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;'
