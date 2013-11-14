@@ -15,7 +15,7 @@ before_script:
   - mysql -e 'SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;'
   - mysql -e 'SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;'
   - mysql -e "SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';"
-  - mysql -e "DROP SCHEMA IF EXISTS `projetobd` ;"
+  - mysql -e "DROP database IF EXISTS `projetobd` ;"
   - mysql -e "CREATE database IF NOT EXISTS `projetobd` DEFAULT CHARACTER SET utf8 ;"
   - mysql -e 'SHOW WARNINGS;'
   - mysql -e "USE `projetobd` ;"
