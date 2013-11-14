@@ -18,7 +18,7 @@ public class FestaDaoTestSuite {
 
 	@Test
 	public void testProcurarFestaInexistente() {
-		Festa retornoPesquisaFesta = (Festa) festaDao.buscar("2013/11/11");//ele retorna um objeto festa vazio se não tiver festa cadastrada
+		Festa retornoPesquisaFesta = (Festa) festaDao.buscar("2013/11/11");//ele retorna um objeto festa vazio se nao tiver festa cadastrada
 		assertEquals(retornoPesquisaFesta.getDataFim(), null);
 		assertEquals(retornoPesquisaFesta.getDataInicio(), null);
 		assertEquals(retornoPesquisaFesta.getEstiloFesta(), null);
