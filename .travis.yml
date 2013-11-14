@@ -10,6 +10,7 @@ script:
   
 services: mysql
 
+
 before_script:
   - mysql -e 'create database projetobd;'
   - mysql -e 'SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;'
