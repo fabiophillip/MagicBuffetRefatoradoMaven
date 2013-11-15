@@ -8,7 +8,7 @@ import org.junit.Test;
 import controler.Gerente;
 import entidadesDAO.GerenteDAO;
 
-public class GerenteDAOTestSuite {
+public class GerenteDAOTest {
 
 	private GerenteDAO gerenteDao;
 	@Before
