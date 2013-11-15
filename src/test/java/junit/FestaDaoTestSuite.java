@@ -17,7 +17,7 @@ public class FestaDaoTestSuite {
 	@Before
 	public void setUp() throws Exception {
 		festaDao = new FestaDAO();
-		//remover festas usadas no teste na inserção
+		//remover festas usadas no teste na insercao
 		Festa novaFesta = new Festa();
 		novaFesta.setDataInicio("2013/11/11");
 		novaFesta.setEstiloFesta("Normal");
@@ -29,7 +29,7 @@ public class FestaDaoTestSuite {
 		novaFesta.setQuantidadeConvidados(3);
 		novaFesta.setTema("Meninas Super Poderosas");
 		novaFesta.setExterno(true);
-		festaDao.remover(novaFesta);//se já existia no BD
+		festaDao.remover(novaFesta);//se ja existia no BD
 		
 		Festa novaFesta2 = new Festa();
 		novaFesta2.setDataInicio("2013/12/24");
@@ -42,13 +42,13 @@ public class FestaDaoTestSuite {
 		novaFesta2.setQuantidadeConvidados(3);
 		novaFesta2.setTema("Meninas Super Poderosas");
 		novaFesta2.setExterno(true);
-		festaDao.remover(novaFesta2);//se já existia
+		festaDao.remover(novaFesta2);//se ja existia
 		festaDao.criar(novaFesta2);
 	}
 
 	@Test
 	public void testProcurarFestaInexistente() {
-		Festa retornoPesquisaFesta = (Festa) festaDao.buscar("2013/11/11");//ele retorna um objeto festa vazio se não tiver festa cadastrada
+		Festa retornoPesquisaFesta = (Festa) festaDao.buscar("2013/11/11");//ele retorna um objeto festa vazio se nao tiver festa cadastrada
 		assertEquals(retornoPesquisaFesta.getDataFim(), null);
 		assertEquals(retornoPesquisaFesta.getDataInicio(), null);
 		assertEquals(retornoPesquisaFesta.getEstiloFesta(), null);

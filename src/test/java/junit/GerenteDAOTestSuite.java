@@ -17,13 +17,13 @@ public class GerenteDAOTestSuite {
 		Gerente gerenteLimparBd = new Gerente();
 		gerenteLimparBd.setLogin("fulanoQualquer");
 		gerenteLimparBd.setSenha("123667");
-		gerenteDao.remover(gerenteLimparBd);//se já existir esse gerente...
+		gerenteDao.remover(gerenteLimparBd);//se ja existir esse gerente...
 		
 		gerenteDao = new GerenteDAO();
 		Gerente gerenteParaBuscarBd = new Gerente();
 		gerenteParaBuscarBd.setLogin("fulano2");
 		gerenteParaBuscarBd.setSenha("127599");
-		gerenteDao.remover(gerenteParaBuscarBd);//se já existir esse gerente...
+		gerenteDao.remover(gerenteParaBuscarBd);//se ja existir esse gerente...
 		gerenteDao.criar(gerenteParaBuscarBd);
 		
 	}
