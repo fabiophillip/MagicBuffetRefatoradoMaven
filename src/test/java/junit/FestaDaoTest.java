@@ -19,36 +19,21 @@ public class FestaDaoTest {
 		festaDao = new FestaDAO();
 		//remover festas usadas no teste na insercao
 		Festa novaFesta = new Festa();
-		novaFesta.setDataInicio("2013/11/11");
-		novaFesta.setEstiloFesta("Normal");
-		novaFesta.setHoraInicio(Time.valueOf("08:40:00"));
+		
 		novaFesta.setIdFesta("12345");
-		novaFesta.setLocal("Rua Carmosina");
-		novaFesta.setPacote("pacote Completo");
-		novaFesta.setPessoaCPF("556699999");
-		novaFesta.setQuantidadeConvidados(3);
-		novaFesta.setTema("Meninas Super Poderosas");
-		novaFesta.setExterno(true);
+		
 		festaDao.remover(novaFesta);//se ja existia no BD
 		
 		Festa novaFesta2 = new Festa();
-		novaFesta2.setDataInicio("2013/12/24");
-		novaFesta2.setEstiloFesta("Normal");
-		novaFesta2.setHoraInicio(Time.valueOf("08:40:00"));
+	
 		novaFesta2.setIdFesta("123456");
-		novaFesta2.setLocal("Rua Carmosina");
-		novaFesta2.setPacote("pacote Completo");
-		novaFesta2.setPessoaCPF("556699999");
-		novaFesta2.setQuantidadeConvidados(3);
-		novaFesta2.setTema("Meninas Super Poderosas");
-		novaFesta2.setExterno(true);
-		festaDao.remover(novaFesta2);//se ja existia
-		festaDao.criar(novaFesta2);
+	
+		festaDao.remover(novaFesta2);
 	}
 
 	@Test
 	public void testProcurarFestaInexistente() {
-		/*Festa retornoPesquisaFesta = (Festa) festaDao.buscar("2013/11/11");//ele retorna um objeto festa vazio se nao tiver festa cadastrada
+		Festa retornoPesquisaFesta = (Festa) festaDao.buscar("2013/11/11");//ele retorna um objeto festa vazio se nao tiver festa cadastrada
 		assertEquals(retornoPesquisaFesta.getDataFim(), null);
 		assertEquals(retornoPesquisaFesta.getDataInicio(), null);
 		assertEquals(retornoPesquisaFesta.getEstiloFesta(), null);
@@ -58,7 +43,7 @@ public class FestaDaoTest {
 		assertEquals(retornoPesquisaFesta.getPacote(), null);
 		assertEquals(retornoPesquisaFesta.getPessoaCPF(), null);
 		assertEquals(retornoPesquisaFesta.getQuantidadeConvidados(), 0);
-		assertEquals(retornoPesquisaFesta.getTema(), null);*/
+		assertEquals(retornoPesquisaFesta.getTema(), null);
 	}
 	
 	
