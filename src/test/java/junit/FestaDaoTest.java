@@ -15,7 +15,7 @@ public class FestaDaoTest {
 
 	private FestaDAO festaDao;
 	@Before
-	public void setUp() throws Exception {
+	public void setUp()  {
 		festaDao = new FestaDAO();
 		//remover festas usadas no teste na insercao
 		Festa novaFesta = new Festa();
