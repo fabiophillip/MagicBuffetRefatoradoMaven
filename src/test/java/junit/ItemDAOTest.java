@@ -99,6 +99,7 @@ public class ItemDAOTest {
 		}
 	}
 	
+	@Test
 	public void testBuscarItemPorNome()
 	{
 		Item itemBuscar = new Item();
