@@ -14,7 +14,6 @@ import entidadesDAO.FestaDAO;
 public class FestaDaoTestSuite {
 
 	private FestaDAO festaDao;
-	
 	@Before
 	public void setUp() throws Exception {
 		festaDao = new FestaDAO();

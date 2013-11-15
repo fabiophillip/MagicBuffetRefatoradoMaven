@@ -26,6 +26,13 @@ public class GerenteDAOTestSuite {
 		gerenteDao.remover(gerenteParaBuscarBd);//se ja existir esse gerente...
 		gerenteDao.criar(gerenteParaBuscarBd);
 		
+		gerenteDao = new GerenteDAO();
+		Gerente gerenteParaRemover = new Gerente();
+		gerenteParaRemover.setLogin("fulano3");
+		gerenteParaRemover.setSenha("127596808");
+		gerenteDao.remover(gerenteParaRemover);//se ja existir esse gerente...
+		gerenteDao.criar(gerenteParaRemover);
+		
 	}
 
 	@Test
@@ -45,6 +52,17 @@ public class GerenteDAOTestSuite {
 		Gerente gerenteAchado = (Gerente) gerenteDao.buscar("fulano2");
 		assertEquals(gerenteAchado.getLogin(), "fulano2");
 		assertEquals(gerenteAchado.getSenha(), "127599");
+	}
+	
+	@Test
+	public void testRemoverUmGErenteHappyPath()
+	{
+		
+		Gerente gerenteParaRemover = new Gerente();
+		gerenteParaRemover.setLogin("fulano3");
+		gerenteParaRemover.setSenha("127596808");
+		boolean removeu = gerenteDao.remover(gerenteParaRemover);
+		assertEquals(true, removeu);
 	}
 	
 	
