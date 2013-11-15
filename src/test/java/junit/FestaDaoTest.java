@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.rmi.server.UID;
 import java.sql.Time;
+import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -29,6 +30,20 @@ public class FestaDaoTest {
 		novaFesta2.setIdFesta("761875");
 	
 		festaDao.remover(novaFesta2);
+		
+		Festa festaPraBuscar = new Festa();
+		festaPraBuscar.setDataInicio("2013/10/21");
+		festaPraBuscar.setEstiloFesta("Normal");
+		festaPraBuscar.setHoraInicio(Time.valueOf("08:00:00"));
+		festaPraBuscar.setIdFesta("123787691");
+		festaPraBuscar.setLocal("Rua Carmosina");
+		festaPraBuscar.setPacote("pacote Completo");
+		festaPraBuscar.setPessoaCPF("556699999");
+		festaPraBuscar.setQuantidadeConvidados(3);
+		festaPraBuscar.setTema("Moranguinho");
+		festaPraBuscar.setExterno(true);
+		festaDao.remover(festaPraBuscar);//se ja existia
+		festaDao.criar(festaPraBuscar);
 	}
 
 	@Test
@@ -98,6 +113,28 @@ public class FestaDaoTest {
 		boolean festaRemovida = festaDao.remover(festaRemover);
 		assertEquals(festaRemovida, true);
 	}
+	
+	@Test
+	public void testBuscarFestaExistente()
+	{
+		
+		ArrayList<Festa> festaAchada = festaDao.buscarFesta("2013/10/21");
+		if(festaAchada.size() >  0)
+		{
+			Festa umaFestaAchada = festaAchada.get(0);
+			if(umaFestaAchada == null)
+			{
+				fail("festa existente o buscar tah dando erro testBuscarFestaExistente()");
+			}
+		}
+		else
+		{
+			fail("buscar festa existente por data esta dando erro");
+		}
+		
+	}
+	
+	
 	
 	
 	
