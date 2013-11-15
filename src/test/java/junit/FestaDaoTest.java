@@ -61,7 +61,7 @@ public class FestaDaoTest {
 		novaFesta.setPacote("pacote Completo");
 		novaFesta.setPessoaCPF("556699999");
 		novaFesta.setQuantidadeConvidados(3);
-		novaFesta.setTema("Meninas Super Poderosas");
+		novaFesta.setTema("Moranguinho");
 		novaFesta.setExterno(true);
 		
 		boolean criadaFesta = festaDao.criar(novaFesta);
