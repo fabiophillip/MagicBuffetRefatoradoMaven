@@ -110,10 +110,7 @@ public class FestaDAO extends ConectionDAO implements InterfaceFestaDAO {
    
     @Override
     public boolean criar(Object object) {
-             String criarFesta = "INSERT INTO festa "
-                + "(IdFesta, clienteCPF, idTema, localizacaoCEP, idPacote, datainicio, "
-                + "dataFim, horaInicio, externo, quantidadeconvidados, estiloFesta)"
-                + "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+             String criarFesta = "INSERT INTO festa VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
 
         
