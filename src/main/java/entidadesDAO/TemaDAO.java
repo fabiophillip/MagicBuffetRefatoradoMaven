@@ -34,7 +34,7 @@ public class TemaDAO extends  ConectionDAO implements DAOComBuscaMultiplaInterfa
             pstm.close();
             return true;
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro Criar Tema", ex.getMessage());
+            System.out.println(ex.getMessage());
             return false;
         }
     }
@@ -55,7 +55,7 @@ public class TemaDAO extends  ConectionDAO implements DAOComBuscaMultiplaInterfa
             }
 
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Tema nao cadastrado", ex.getMessage());
+        	System.out.println(ex.getMessage());
             
         }
         fechar();
@@ -81,7 +81,7 @@ public class TemaDAO extends  ConectionDAO implements DAOComBuscaMultiplaInterfa
             return true;
 
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Tema nao Atualizado", ex.getMessage());
+        	System.out.println(ex.getMessage());
             return false;
         }
 
@@ -98,10 +98,10 @@ public class TemaDAO extends  ConectionDAO implements DAOComBuscaMultiplaInterfa
             pstm.setString(1, tema.getIdTema());
             pstm.execute();
             pstm.close();
-            System.out.println("Tema Removido com sucesso");
+            System.out.println("Tema Removido com sucesso:" + tema.getIdTema());
             return true;
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Remover Tema", ex.getMessage());
+        	System.out.println(ex.getMessage());
             return false;
         }
 
@@ -127,7 +127,7 @@ public class TemaDAO extends  ConectionDAO implements DAOComBuscaMultiplaInterfa
             }
             return temas;
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Buscar todos os Temas", ex.getMessage());
+        	System.out.println(ex.getMessage());
         }       
         return null;
     }

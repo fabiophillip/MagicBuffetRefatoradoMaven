@@ -45,7 +45,7 @@ public class PessoaDAO extends ConectionDAO implements InterfacePessoaDAO {
             pstm.close();
             return true;
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Cadastrar uma Pessoa", ex.getMessage());
+            System.out.println(ex.getMessage());
             return false;
         }
     }
@@ -66,7 +66,7 @@ public class PessoaDAO extends ConectionDAO implements InterfacePessoaDAO {
             }
         } catch (SQLException ex) {
             //System.err.println("CPF De Pessoa nao confere com dados do banco");
-            mensagem.imprimeErro("Erro ao Buscar uma Pessoa", ex.getMessage());
+        	System.out.println(ex.getMessage());
         }
         fechar();
         return pessoaResultadoDaBusca;
@@ -128,7 +128,7 @@ public class PessoaDAO extends ConectionDAO implements InterfacePessoaDAO {
             return true;
 
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Atualizar Pessoas", ex.getMessage());
+        	System.out.println(ex.getMessage());
             return false;
         }
     }
@@ -171,7 +171,7 @@ public class PessoaDAO extends ConectionDAO implements InterfacePessoaDAO {
             return pessoas;
 
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Buscar Pessoas", ex.getMessage());
+        	System.out.println(ex.getMessage());
         }
         return null;
 
@@ -194,7 +194,7 @@ public class PessoaDAO extends ConectionDAO implements InterfacePessoaDAO {
             return pessoas;
 
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Buscar Pessoas", ex.getMessage());
+        	System.out.println(ex.getMessage());
         }
         return null;
 
