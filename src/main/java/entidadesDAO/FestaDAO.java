@@ -143,6 +143,7 @@ public class FestaDAO extends ConectionDAO implements InterfaceFestaDAO {
 
         } catch (SQLException ex) {
             try {
+            	ex.printStackTrace();
                 conn.rollback();
                 mensagem.imprimeErro("Erro ao cadastrar Festa", ex.getMessage());
                 return false;
