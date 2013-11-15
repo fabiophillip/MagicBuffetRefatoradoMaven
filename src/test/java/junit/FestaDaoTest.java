@@ -11,7 +11,7 @@ import org.junit.Test;
 import controler.Festa;
 import entidadesDAO.FestaDAO;
 
-public class FestaDaoTest{
+public class FestaDaoTest {
 
 	private FestaDAO festaDao;
 	@Before
@@ -105,17 +105,9 @@ public class FestaDaoTest{
 	@Test
 	public void testRemoverFestaHappyPath()
 	{
-		Festa festaRemover = new Festa();
-		festaRemover.setDataInicio("2013/12/24");
-		festaRemover.setEstiloFesta("Normal");
-		festaRemover.setHoraInicio(Time.valueOf("08:40:00"));
-		festaRemover.setIdFesta("123456");
-		festaRemover.setLocal("Rua Maracajau");
-		festaRemover.setPacote("pacote Completo");
-		festaRemover.setPessoaCPF("556699999");
-		festaRemover.setQuantidadeConvidados(3);
-		festaRemover.setTema("Meninas Super Poderosas");
-		festaRemover.setExterno(true);
+		Festa festaRemover = new Festa("pacote Completo", "Meninas Super Poderosas", "Normal", 
+				"556699999", 3, "Rua Maracajau", "2013/12/24", "2013/12/24", Time.valueOf("08:40:00"), true);
+		
 		//agora, tentar remover essa festa
 		boolean festaRemovida = festaDao.remover(festaRemover);
 		assertEquals(festaRemovida, true);
