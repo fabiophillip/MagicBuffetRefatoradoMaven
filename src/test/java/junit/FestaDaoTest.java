@@ -23,7 +23,7 @@ public class FestaDaoTest {
 		novaFesta.setEstiloFesta("Normal");
 		novaFesta.setHoraInicio(Time.valueOf("08:40:00"));
 		novaFesta.setIdFesta("12345");
-		novaFesta.setLocal("Rua Maracajau");
+		novaFesta.setLocal("Rua Carmosina");
 		novaFesta.setPacote("pacote Completo");
 		novaFesta.setPessoaCPF("556699999");
 		novaFesta.setQuantidadeConvidados(3);
@@ -36,7 +36,7 @@ public class FestaDaoTest {
 		novaFesta2.setEstiloFesta("Normal");
 		novaFesta2.setHoraInicio(Time.valueOf("08:40:00"));
 		novaFesta2.setIdFesta("123456");
-		novaFesta2.setLocal("Rua Maracajau");
+		novaFesta2.setLocal("Rua Carmosina");
 		novaFesta2.setPacote("pacote Completo");
 		novaFesta2.setPessoaCPF("556699999");
 		novaFesta2.setQuantidadeConvidados(3);
@@ -72,7 +72,7 @@ public class FestaDaoTest {
 		novaFesta.setEstiloFesta("Normal");
 		novaFesta.setHoraInicio(Time.valueOf("08:40:00"));
 		novaFesta.setIdFesta("12345");
-		novaFesta.setLocal("Rua Maracajau");
+		novaFesta.setLocal("Rua Carmosina");
 		novaFesta.setPacote("pacote Completo");
 		novaFesta.setPessoaCPF("556699999");
 		novaFesta.setQuantidadeConvidados(3);
@@ -91,7 +91,7 @@ public class FestaDaoTest {
 		festaAtualizar.setEstiloFesta("Normal");
 		festaAtualizar.setHoraInicio(Time.valueOf("08:40:00"));
 		festaAtualizar.setIdFesta("12345");
-		festaAtualizar.setLocal("Rua Maracajau");
+		festaAtualizar.setLocal("Rua Carmosina");
 		festaAtualizar.setPacote("pacote Completo");
 		festaAtualizar.setPessoaCPF("556699999");
 		festaAtualizar.setQuantidadeConvidados(3);
@@ -106,7 +106,7 @@ public class FestaDaoTest {
 	public void testRemoverFestaHappyPath()
 	{
 		Festa festaRemover = new Festa("pacote Completo", "Meninas Super Poderosas", "Normal", 
-				"556699999", 3, "Rua Maracajau", "2013/12/24", "2013/12/24", Time.valueOf("08:40:00"), true);
+				"556699999", 3, "Rua Carmosina", "2013/12/24", "2013/12/24", Time.valueOf("08:40:00"), true);
 		
 		//agora, tentar remover essa festa
 		boolean festaRemovida = festaDao.remover(festaRemover);
