@@ -131,7 +131,17 @@ public class FestaDaoTest {
 		{
 			fail("buscar festa existente por data esta dando erro");
 		}
-		
+	}
+	
+	@Test
+	public void testBuscarTodasAsFestasExistentes()
+	{
+		ArrayList<Object> festasAchadas = festaDao.buscar();
+		if(festasAchadas.size() == 0)
+		{
+			//tem ao menos uma festa que permanece no BD, entao tem erro
+			fail("buscar todas as festas esta dando erro");
+		}
 	}
 	
 	
