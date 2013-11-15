@@ -22,7 +22,9 @@ public class TemaDAOTest
 		Tema t = new Tema("mlp","my little pony");
 		temaDAO.remover(t);
 		
-		Tema t2= new Tema("llpsy","lalaloopsy");
+		Tema t2= new Tema();
+		t2.setIdTema("llpsy");
+		t2.setTnome("lalaloopsy");
 		temaDAO.remover(t2);
 	}
 
@@ -35,6 +37,14 @@ public class TemaDAOTest
 		assertEquals(conseguiuCriar,true);
 	}
 	
+	@Test
+	public void testCriarTemaInvalido() 
+	{
+		Tema t = new Tema("mlp","abababababbababbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		boolean conseguiuCriar = temaDAO.criar(t);
+		assertEquals(conseguiuCriar,false);
+	}
+	
 	
 	@Test
 	public void testBuscarPorTemaValido() 
@@ -42,6 +52,13 @@ public class TemaDAOTest
 		String idTemaPica = "21";
 		Tema t = (Tema) temaDAO.buscar(idTemaPica);
 		assertEquals(t.getTnome(),"Pica-pau");
+	}
+	@Test
+	public void testBuscarPorTemaInvalido() 
+	{
+		String idTema = "()(87722e71'''''&=true";
+		Tema t = (Tema) temaDAO.buscar(idTema);
+		assertEquals(t.getTnome(),null);
 	}
 	
 	@Test
@@ -60,6 +77,25 @@ public class TemaDAOTest
 			boolean conseguiuAtualizar = temaDAO.atualizar(t2);
 			
 			assertEquals(conseguiuAtualizar,true);
+		}
+	}
+	
+	@Test
+	public void atualizarTemaInvalido() 
+	{
+		Tema t = new Tema("mlp","my little pony");
+		boolean conseguiuCriar = temaDAO.criar(t);
+		
+		if(conseguiuCriar == false)
+		{
+			fail("nao conseguiu nem criar o tema para atualizar");
+		}
+		else
+		{
+			Tema t2 = new Tema("mlp","abababababbababbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+			boolean conseguiuAtualizar = temaDAO.atualizar(t2);
+			
+			assertEquals(conseguiuAtualizar,false);
 		}
 	}
 	
@@ -83,8 +119,8 @@ public class TemaDAOTest
 		{
 			fail("nao conseguiu criar o tema para deletar");
 		}
-		
 	}
+	
 	
 	@Test
 	public void testBuscarTodosOsTemas() 
