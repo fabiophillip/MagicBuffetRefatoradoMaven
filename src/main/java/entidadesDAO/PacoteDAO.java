@@ -36,7 +36,7 @@ public class PacoteDAO extends ConectionDAO implements InterfacePacoteDAO {
                     pstm.execute();
                     pstm.close();
               } catch (SQLException ex) {
-                   mensagem.imprimeErro("Erro ao Cadastrar itens em um Pacote", ex.getMessage());
+                   System.out.println(ex.getMessage());
               }           
             }
     }
@@ -56,7 +56,7 @@ public class PacoteDAO extends ConectionDAO implements InterfacePacoteDAO {
             criarItensPacote(pacote);
             return true;
         } catch (SQLException ex) {            
-            mensagem.imprimeErro("Erro ao Cadastrar um Pacote", ex.getMessage());
+        	System.out.println(ex.getMessage());
             return false;
         }
         
@@ -77,7 +77,7 @@ public class PacoteDAO extends ConectionDAO implements InterfacePacoteDAO {
                 pacote.setPrecoPacote(result.getFloat("precoPacote"));
             }
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Buscar um Pacote", ex.getMessage());
+        	System.out.println(ex.getMessage());
         }
         fechar();
         return pacote;
@@ -99,7 +99,7 @@ public class PacoteDAO extends ConectionDAO implements InterfacePacoteDAO {
                 pacote.setPrecoPacote(result.getFloat("precoPacote"));
             }
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Buscar um Pacote", ex.getMessage());
+        	System.out.println(ex.getMessage());
         }
         fechar();
         return pacote;
@@ -121,11 +121,10 @@ public class PacoteDAO extends ConectionDAO implements InterfacePacoteDAO {
             pstm.setFloat(2, pacote.getPrecoPacote());
             pstm.setString(3, pacote.getIdPacote());
             pstm.executeUpdate();
-            System.out.println("Pacote Atualizado");
             fechar();
             return true;
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Atualizar um Pacote", ex.getMessage());
+        	System.out.println(ex.getMessage());
             return false;
         }
     }
@@ -143,7 +142,7 @@ public class PacoteDAO extends ConectionDAO implements InterfacePacoteDAO {
             pstm.close();
             return true;
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Remover um Pacote", ex.getMessage());
+        	System.out.println(ex.getMessage());
             return false;
         }
     }
@@ -168,7 +167,7 @@ public class PacoteDAO extends ConectionDAO implements InterfacePacoteDAO {
             return pacotes;
 
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Buscar Varios Pacotes", ex.getMessage());
+        	System.out.println(ex.getMessage());
         }
         return null;
     }
