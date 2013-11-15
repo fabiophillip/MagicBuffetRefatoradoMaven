@@ -65,11 +65,11 @@ public class GerenteDAO extends PessoaDAO {
         conectar(sql);
 
         try {
-            Gerente gerente = new Gerente();
+            Gerente gerente = (Gerente) object;
             pstm.setString(1, gerente.getLogin());
             pstm.execute();
             pstm.close();
-            System.out.println("Pessoa removida com sucesso");
+            System.out.println("Gerente removido com sucesso:" + gerente.getLogin());
             return true;
         } catch (SQLException ex) {
             mensagem.imprimeErro("Erro ao Remover Gerente", ex.getMessage());
