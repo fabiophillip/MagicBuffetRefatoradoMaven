@@ -11,7 +11,7 @@ import org.junit.Test;
 import controler.Festa;
 import entidadesDAO.FestaDAO;
 
-public class FestaDaoTestSuite {
+public class FestaDaoTest{
 
 	private FestaDAO festaDao;
 	@Before
