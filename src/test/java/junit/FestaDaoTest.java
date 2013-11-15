@@ -20,13 +20,13 @@ public class FestaDaoTest {
 		//remover festas usadas no teste na insercao
 		Festa novaFesta = new Festa();
 		
-		novaFesta.setIdFesta("12345");
+		novaFesta.setIdFesta("12378779");
 		
 		festaDao.remover(novaFesta);//se ja existia no BD
 		
 		Festa novaFesta2 = new Festa();
 	
-		novaFesta2.setIdFesta("123456");
+		novaFesta2.setIdFesta("761875");
 	
 		festaDao.remover(novaFesta2);
 	}
@@ -56,7 +56,7 @@ public class FestaDaoTest {
 		novaFesta.setDataInicio("2013/11/11");
 		novaFesta.setEstiloFesta("Normal");
 		
-		novaFesta.setIdFesta("12345");
+		novaFesta.setIdFesta("12378779");
 		novaFesta.setLocal("Rua Carmosina");
 		novaFesta.setPacote("pacote Completo");
 		novaFesta.setPessoaCPF("556699999");
@@ -75,7 +75,7 @@ public class FestaDaoTest {
 		festaAtualizar.setDataInicio("2013/11/11");
 		festaAtualizar.setEstiloFesta("Normal");
 		festaAtualizar.setHoraInicio(Time.valueOf("08:40:00"));
-		festaAtualizar.setIdFesta("12345");
+		festaAtualizar.setIdFesta("12378779");
 		festaAtualizar.setLocal("Rua Carmosina");
 		festaAtualizar.setPacote("pacote Completo");
 		festaAtualizar.setPessoaCPF("556699999");
@@ -90,8 +90,8 @@ public class FestaDaoTest {
 	@Test
 	public void testRemoverFestaHappyPath()
 	{
-		Festa festaRemover = new Festa("pacote Completo", "Meninas Super Poderosas", "Normal", 
-				"556699999", 3, "Rua Carmosina", "2013/12/24", "2013/12/24", Time.valueOf("08:40:00"), true);
+		Festa festaRemover = new Festa();
+		festaRemover.setIdFesta("12378779");
 		
 		//agora, tentar remover essa festa
 		boolean festaRemovida = festaDao.remover(festaRemover);
