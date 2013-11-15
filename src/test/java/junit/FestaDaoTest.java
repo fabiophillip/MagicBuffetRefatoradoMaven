@@ -55,7 +55,7 @@ public class FestaDaoTest {
 		Festa novaFesta = new Festa();
 		novaFesta.setDataInicio("2013/11/11");
 		novaFesta.setEstiloFesta("Normal");
-		novaFesta.setHoraInicio(Time.valueOf("08:40:00"));
+		
 		novaFesta.setIdFesta("12345");
 		novaFesta.setLocal("Rua Carmosina");
 		novaFesta.setPacote("pacote Completo");
