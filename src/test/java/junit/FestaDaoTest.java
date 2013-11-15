@@ -51,7 +51,7 @@ public class FestaDaoTest {
 	@Test
 	public void testCriarFestaHappyPath()
 	{
-		
+		System.out.println("iniciou metodo testCriarFestaHappyPath");
 		Festa novaFesta = new Festa();
 		novaFesta.setDataInicio("2013/11/11");
 		novaFesta.setEstiloFesta("Normal");
@@ -65,6 +65,7 @@ public class FestaDaoTest {
 		novaFesta.setExterno(true);
 		
 		boolean criadaFesta = festaDao.criar(novaFesta);
+		System.out.println("criou festa metodo testCriarFestaHappyPath");
 		assertEquals(true, criadaFesta);
 	}
 	
