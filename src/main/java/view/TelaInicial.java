@@ -54,6 +54,7 @@ public class TelaInicial extends javax.swing.JFrame {
         TEMA = new javax.swing.JButton();
         ITENS = new javax.swing.JButton();
         BotaoBuscar = new javax.swing.JButton();
+        BotaoBuscar.setName("botaoBuscar");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -263,15 +264,16 @@ public class TelaInicial extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    
+    public javax.swing.JButton getBotaoBuscar() {
+		return BotaoBuscar;
+	}
     private javax.swing.JButton BotaoBuscar;
-    private javax.swing.JButton FESTA;
+	private javax.swing.JButton FESTA;
     private javax.swing.JButton ITENS;
     private javax.swing.JButton PACOTE;
     private javax.swing.JButton TEMA;
     private javax.swing.JButton cadastros;
     // End of variables declaration//GEN-END:variables
-    
-    public javax.swing.JButton getBotaoBuscar() {
-		return BotaoBuscar;
-	}
 }
+
