@@ -6,7 +6,6 @@ jdk:
   
 script: 
   - mvn install -DskipTests=false
-  - mvn install -Dfile=abbot.jar -DgroupId=abbotteste -DartifactId=abbotteste -Dversion=1.0.0 -Dpackaging=jar
   - mvn -e  test cobertura:cobertura coveralls:cobertura
   
 services: mysql
