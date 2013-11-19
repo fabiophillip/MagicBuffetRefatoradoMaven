@@ -2,7 +2,6 @@ package junit;
 
 import static org.junit.Assert.*;
 
-import java.rmi.server.UID;
 import java.sql.Time;
 import java.util.ArrayList;
 
@@ -62,6 +61,29 @@ public class FestaDaoTest {
 		assertEquals(retornoPesquisaFesta.getTema(), null);
 	}
 	
+	@Test
+	public void testProcurarFestaSqlInjection()
+	{
+		Object retornoPesquisaFesta =  festaDao.buscar("()(87722e71'''''&=true");
+		if(retornoPesquisaFesta != null)
+		{
+			fail("retornando Festa com buscar() uma festa inserindo sql injection");
+		}
+	}
+	
+	@Test
+	public void testProcurarFestaPorDataSqlInjection()
+	{
+		Object retornoPesquisaFesta =  festaDao.buscarFesta("()(87722e71'''''&=true");
+		if(retornoPesquisaFesta != null)
+		{
+			fail("retornando Festa com buscarFesta(String data) uma festa inserindo sql injection");
+		}
+	}
+	
+	
+	
+	
 	
 	
 	@Test
@@ -86,6 +108,24 @@ public class FestaDaoTest {
 	}
 	
 	@Test
+	public void testCriarFestaSqlInjection()
+	{
+		Festa novaFesta = new Festa();
+		novaFesta.setDataInicio("2013/11/11");
+		novaFesta.setEstiloFesta("Normal");
+		novaFesta.setHoraInicio(Time.valueOf("08:00:00"));
+		novaFesta.setIdFesta("12378779");
+		novaFesta.setLocal("Rua Carmosina");
+		novaFesta.setPacote("pacote Completo");
+		novaFesta.setPessoaCPF("abababababbababbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		novaFesta.setQuantidadeConvidados(3);
+		novaFesta.setTema("Moranguinho");
+		novaFesta.setExterno(true);
+		boolean criou = this.festaDao.criar(novaFesta);
+		assertEquals(false, criou);
+	}
+	
+	@Test
 	public void testUpdateFestaHappyPath()
 	{
 		Festa festaAtualizar = new Festa();
@@ -99,10 +139,12 @@ public class FestaDaoTest {
 		festaAtualizar.setQuantidadeConvidados(3);
 		festaAtualizar.setTema("Moranguinho");
 		festaAtualizar.setExterno(true);
-		
 		boolean atualizadaFesta = festaDao.atualizar(festaAtualizar);
+		System.out.println("atualizei festa");
 		assertEquals(true, atualizadaFesta);
 	}
+	
+	
 	
 	@Test
 	public void testRemoverFestaHappyPath()
@@ -144,6 +186,10 @@ public class FestaDaoTest {
 			fail("buscar todas as festas esta dando erro");
 		}
 	}
+	
+	
+	
+	
 	
 	
 	

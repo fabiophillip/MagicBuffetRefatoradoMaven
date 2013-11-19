@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  */
 public class FestaDAO extends ConectionDAO implements InterfaceFestaDAO {
 
-	
+        
     
     Mensagens mensagem = new Mensagens();
     
@@ -36,11 +36,11 @@ public class FestaDAO extends ConectionDAO implements InterfaceFestaDAO {
             result = pstm.executeQuery();
 
             while (result.next()) {
-            	festa = this.converterResultadoConsultaEmObjetoFesta(result);
+                    festa = this.converterResultadoConsultaEmObjetoFesta(result);
             }
 
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao buscar Festa", ex.getMessage());
+            return null;
         }
 
         fechar();
@@ -57,11 +57,11 @@ public class FestaDAO extends ConectionDAO implements InterfaceFestaDAO {
         try {
             result = pstm.executeQuery();
             while (result.next()) {
-            	Festa festa = this.converterResultadoConsultaEmObjetoFesta(result);
+                    Festa festa = this.converterResultadoConsultaEmObjetoFesta(result);
                 festas.add(festa);
             }
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Buscar Todas as Festa", ex.getMessage());
+            return null;
         }
         
         return festas;
@@ -78,7 +78,7 @@ public class FestaDAO extends ConectionDAO implements InterfaceFestaDAO {
         try {
             result = pstm.executeQuery();
             while (result.next()) {
-            	Festa festa = this.converterResultadoConsultaEmObjetoFesta(result);
+                    Festa festa = this.converterResultadoConsultaEmObjetoFesta(result);
                 festas.add(festa);
             }
         } catch (SQLException ex) {
@@ -91,7 +91,7 @@ public class FestaDAO extends ConectionDAO implements InterfaceFestaDAO {
 
    private Festa converterResultadoConsultaEmObjetoFesta(ResultSet result) throws SQLException
    {
-	   Festa festa = new Festa();
+           Festa festa = new Festa();
 
        festa.setIdFesta(result.getString("IdFesta"));
        festa.setPessoaCPF(result.getString("clienteCPF"));
@@ -143,9 +143,8 @@ public class FestaDAO extends ConectionDAO implements InterfaceFestaDAO {
 
         } catch (SQLException ex) {
             try {
-            	ex.printStackTrace();
+                    ex.printStackTrace();
                 conn.rollback();
-                mensagem.imprimeErro("Erro ao cadastrar Festa", ex.getMessage());
                 return false;
             } catch (SQLException ex1) {
                 Logger.getLogger(FestaDAO.class.getName()).log(Level.SEVERE, null, ex1);
@@ -190,7 +189,6 @@ public class FestaDAO extends ConectionDAO implements InterfaceFestaDAO {
             return true;
 
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao atualizar Festa", ex.getMessage());
             return false;
         }
     }
@@ -212,6 +210,8 @@ public class FestaDAO extends ConectionDAO implements InterfaceFestaDAO {
             return false;
         }
     }
+    
+    
 
 
 }
