@@ -17,7 +17,7 @@ import org.junit.Test;
 
 import view.TelaInicial;
 
-
+import org.junit.runner.RunWith;
 
 @RunWith(CacioTestRunner.class)
 public class TelaInicialRobotTest {
