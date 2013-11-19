@@ -1,17 +1,3 @@
-package junit;
-
-import static org.junit.Assert.*;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import controler.Item;
-import controler.Pacote;
-import entidadesDAO.ItemDAO;
-
 public class ItemDAOTest {
 	private ItemDAO itemDAO;
 
@@ -23,6 +9,8 @@ public class ItemDAOTest {
 		itemDAO.remover(itemFestaRemoverVouCriar);//removi pq vou criar depois
 		itemFestaRemoverVouCriar.setIdItem("862868662");
 		itemDAO.remover(itemFestaRemoverVouCriar);
+		itemFestaRemoverVouCriar.setIdItem("44680");
+		itemDAO.remover(itemFestaRemoverVouCriar);
 		
 	}
 
@@ -33,6 +21,14 @@ public class ItemDAOTest {
 		itemFesta.setNomeItem("party cannon");
 		itemFesta.setQuantidadeTotal(3);
 		itemFesta.setPrecoUnidade(new Float(30.40));
+		boolean itemCriado = itemDAO.criar(itemFesta);
+		assertEquals(itemCriado, true);
+	}
+	
+	public void testCriarItemQualquerConstrutorCompleto()
+	{
+		Item itemFesta = new Item("44680", "the great and powerful trixie", 1,new Float(100.00));
+		
 		boolean itemCriado = itemDAO.criar(itemFesta);
 		assertEquals(itemCriado, true);
 	}
@@ -99,7 +95,6 @@ public class ItemDAOTest {
 		}
 	}
 	
-	@Test
 	public void testBuscarItemPorNome()
 	{
 		Item itemBuscar = new Item();
