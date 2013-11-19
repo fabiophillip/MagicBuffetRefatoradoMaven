@@ -270,4 +270,8 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JButton TEMA;
     private javax.swing.JButton cadastros;
     // End of variables declaration//GEN-END:variables
+    
+    public javax.swing.JButton getBotaoBuscar() {
+		return BotaoBuscar;
+	}
 }
