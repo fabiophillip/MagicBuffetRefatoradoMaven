@@ -19,7 +19,7 @@ import view.TelaInicial;
 
 public class TelaInicialTest  extends ComponentTestFixture
 {
-	public TelaInicialTest(String name) {
+	/*public TelaInicialTest(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
@@ -62,6 +62,6 @@ public class TelaInicialTest  extends ComponentTestFixture
 			System.out.println("multiplos componentes achados");
 			fail("multiplos componentes achados");
 		}
-	}
+	}*/
 
 }
