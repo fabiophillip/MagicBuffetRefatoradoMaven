@@ -57,9 +57,9 @@
 	</dependency>
 	
 	<dependency>
-	<groupId>abbot</groupId>
-	<artifactId>abbot</artifactId>
-	<version>0.13.0</version>
+	<groupId>maven</groupId>
+	<artifactId>maven-abbot-plugin</artifactId>
+	<version>1.0</version>
 	</dependency>
 	
             
