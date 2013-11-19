@@ -45,23 +45,30 @@ public class TelaInicialRobotTest {
 	@Test
 	public void test() {
 		
-		
 		try
 		{
+			System.out.println("VVVVVV iniciou teste");
 			try { Thread.sleep(3000); } catch (Exception e) {}
+			System.out.println("VVVVVV vou criar botao");
 			AbstractButton button = TelaInicial.getInstance().getBotaoBuscar();
+			System.out.println("VVVVVV peguei botao da tela");
 			Point p = button.getLocationOnScreen();
+			System.out.println("VVVVVV depois de getLocationOnScreen");
 		    Robot r = new Robot();
 		    r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
 		    r.mousePress(InputEvent.BUTTON1_MASK);
 		    try { Thread.sleep(3000); } catch (Exception e) {}
 		    r.mouseRelease(InputEvent.BUTTON1_MASK);
+		    System.out.println("VVVVVV terminou o teste");
 		}
 	    catch (AWTException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			fail("awt exception");
 		}
+		
+		
+	
 		
 		
        
