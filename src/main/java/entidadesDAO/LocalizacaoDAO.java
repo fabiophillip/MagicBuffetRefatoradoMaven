@@ -43,7 +43,7 @@ public class LocalizacaoDAO extends ConectionDAO implements GenericDAOInterface,
             return true;
 
         } catch (SQLException ex) {
-           mensagem.imprimeErro("Erro ao inserir localizacao", ex.getMessage());
+           System.out.println(ex.getMessage());
             return false;
         }
     }
@@ -52,7 +52,7 @@ public class LocalizacaoDAO extends ConectionDAO implements GenericDAOInterface,
     
     public Localizacao buscar2() {
 
-        String buscarLocalizacao = "SELECT MAX(idLocalizacao) FROM localizacao";
+        String buscarLocalizacao = "SELECT MAX(IdLocalizacao),CEP,Rua,Numero,Bairro,Cidade,IdLocalizacao FROM localizacao;";
 
         Localizacao localizacao = new Localizacao();
         conectar(buscarLocalizacao);
@@ -61,8 +61,10 @@ public class LocalizacaoDAO extends ConectionDAO implements GenericDAOInterface,
             ResultSet result;
             result = pstm.executeQuery();
 
-            while (result.next()) {
-                localizacao.setIdLocalizacao(result.getString("idLocalizacao"));
+            while (result.next()) 
+            {
+            	
+                localizacao.setIdLocalizacao(result.getString("IdLocalizacao"));
                 localizacao.setCEP(result.getString("CEP"));
                 localizacao.setRua(result.getString("Rua"));
                 localizacao.setNumero(result.getInt("Numero"));
@@ -71,7 +73,7 @@ public class LocalizacaoDAO extends ConectionDAO implements GenericDAOInterface,
             }
 
         } catch (SQLException ex) {
-           mensagem.imprimeErro("Erro ao buscar Localizacao", ex.getMessage());
+        	System.out.println(ex.getMessage());
         }
         fechar();
         return localizacao;
@@ -99,13 +101,13 @@ public class LocalizacaoDAO extends ConectionDAO implements GenericDAOInterface,
             }
 
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao buscar Localizacao", ex.getMessage());
+        	System.out.println(ex.getMessage());
         }
         fechar();
         return localizacao;
     }
 
-    // TÃ� COM PROBLEMA REFAZER
+    // TA COM PROBLEMA REFAZER
     @Override
     public boolean atualizar(Object object) {
 
@@ -134,7 +136,7 @@ public class LocalizacaoDAO extends ConectionDAO implements GenericDAOInterface,
             return true;
 
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Atualizar Localizacao", ex.getMessage());
+        	System.out.println(ex.getMessage());
             return false;
         }
     }
@@ -151,7 +153,7 @@ public class LocalizacaoDAO extends ConectionDAO implements GenericDAOInterface,
             System.out.println("Localizacao removida com sucesso");
             return true;
         } catch (SQLException e) {
-            mensagem.imprimeErro("Erro ao apagar Localizacao", e.getMessage());
+        	System.out.println(e.getMessage());
             return false;
         }
     }
@@ -180,7 +182,7 @@ public class LocalizacaoDAO extends ConectionDAO implements GenericDAOInterface,
                 locais.add(localizacao);
             }
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Buscar todas as Localizacoes", ex.getMessage());
+        	System.out.println(ex.getMessage());
         }
         return locais;
     }
