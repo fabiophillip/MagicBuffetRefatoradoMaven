@@ -48,9 +48,11 @@ public class TelaInicialTest  extends ComponentTestFixture
 		} catch (ComponentNotFoundException e) 
 		{
 			fail("componente nao achado");
+			System.out.println("componente nao achado");
 		} catch (MultipleComponentsFoundException e) 
 		{
 			fail("multiplos componentes achados");
+			System.out.println("multiplos componentes achados");
 		}
 	}
 
