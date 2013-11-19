@@ -30,11 +30,14 @@ public class TelaInicialTest  extends ComponentTestFixture
 	public void setUp() throws Exception 
 	{
 		telaInicial = TelaInicial.getInstance();
+		System.out.println("setup terminou");
 	}
 
 	@Test
 	public void testClicarBotaoCadastros() 
 	{
+		System.out.println("testClicarBotaoCadastros comecou");
+		
 		try {
 			JButton botaoCadastros = (JButton)getFinder().find(new Matcher() {
 			    public boolean matches(Component c) {
@@ -42,19 +45,22 @@ public class TelaInicialTest  extends ComponentTestFixture
 			        return c instanceof JButton && ((JButton)c).getText().equals("CADASTROS");
 			    }
 			});
+			
+			System.out.println("botao cadastros achado");
+			
 			showFrame(botaoCadastros);
+			
+			System.out.println("showframe executado");
 			JTextComponentTester tester = new JTextComponentTester();
 			tester.actionClick(botaoCadastros);
 		} catch (ComponentNotFoundException e) 
 		{
 			System.out.println("componente nao achado");
 			fail("componente nao achado");
-			
 		} catch (MultipleComponentsFoundException e) 
 		{
 			System.out.println("multiplos componentes achados");
 			fail("multiplos componentes achados");
-		
 		}
 	}
 
