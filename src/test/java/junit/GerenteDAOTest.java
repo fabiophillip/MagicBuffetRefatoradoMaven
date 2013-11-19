@@ -65,6 +65,26 @@ public class GerenteDAOTest {
 		assertEquals(true, removeu);
 	}
 	
+	@Test
+	public void testCriarGerenteSqlInjection()
+	{
+		Gerente gerenteAAdicionar = new Gerente();
+		gerenteAAdicionar.setLogin("abababababbababbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		gerenteAAdicionar.setSenha("1375279");
+		boolean criou = this.gerenteDao.criar(gerenteAAdicionar);
+		assertEquals(false, criou);
+	}
+	
+	@Test
+	public void buscarGerenteSqlInjection()
+	{
+		Object objetoRetorno = this.gerenteDao.buscar("()(87722e71'''''&=true");
+		if(objetoRetorno != null)
+		{
+			fail("buscar gerente com sql injection esta dando certo e era para falhar");
+		}
+	}
+	
 	
 
 }
