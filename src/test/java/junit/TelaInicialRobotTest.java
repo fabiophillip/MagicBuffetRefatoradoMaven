@@ -59,6 +59,7 @@ public class TelaInicialRobotTest {
 		    r.mousePress(InputEvent.BUTTON1_MASK);
 		    try { Thread.sleep(3000); } catch (Exception e) {}
 		    r.mouseRelease(InputEvent.BUTTON1_MASK);
+		    try { Thread.sleep(3000); } catch (Exception e) {}
 		    System.out.println("VVVVVV terminou o teste");
 		}
 	    catch (AWTException e) {
