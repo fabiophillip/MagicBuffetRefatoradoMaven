@@ -3,16 +3,30 @@ package junit;
 import static org.junit.Assert.*;
 
 import java.awt.AWTException;
+import java.awt.Point;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
+
+import javax.swing.AbstractButton;
+import javax.swing.JFrame;
+
+
 
 import org.junit.Before;
 import org.junit.Test;
 
 import view.TelaInicial;
 
-public class TelaInicialRobotTest {
 
+
+
+public class TelaInicialRobotTest {
+	
+	
+    private JFrame  frame;
+
+	
+	
 	@Before
 	public void setUp() throws Exception {
 		 
@@ -24,10 +38,14 @@ public class TelaInicialRobotTest {
 	                TelaInicial.getInstance().setVisible(true);
 	            }
 	        });
+	        
+	        
 	}
 
 	@Test
 	public void test() {
+		
+		
 		try
 		{
 			try { Thread.sleep(3000); } catch (Exception e) {}
@@ -44,6 +62,11 @@ public class TelaInicialRobotTest {
 			e.printStackTrace();
 			fail("awt exception");
 		}
+		
+		
+       
 	}
+	
+	 
 
 }
