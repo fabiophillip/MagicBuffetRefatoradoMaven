@@ -2,20 +2,10 @@ package junit;
 
 import static org.junit.Assert.*;
 
-import java.awt.Component;
-
-import javax.swing.JButton;
-
-import junit.extensions.abbot.ComponentTestFixture;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import abbot.finder.ComponentNotFoundException;
-import abbot.finder.Matcher;
-import abbot.finder.MultipleComponentsFoundException;
-import abbot.tester.JTextComponentTester;
-import view.TelaInicial;
 
 public class TelaInicialTest  //extends ComponentTestFixture
 {
