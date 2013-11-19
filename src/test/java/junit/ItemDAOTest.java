@@ -1,3 +1,17 @@
+package junit;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import controler.Item;
+import controler.Pacote;
+import entidadesDAO.ItemDAO;
+
 public class ItemDAOTest {
 	private ItemDAO itemDAO;
 
