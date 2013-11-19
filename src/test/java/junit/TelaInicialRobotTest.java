@@ -28,9 +28,22 @@ public class TelaInicialRobotTest {
 
 	@Test
 	public void test() {
-	
-		
-       
+		try
+		{
+			try { Thread.sleep(3000); } catch (Exception e) {}
+			AbstractButton button = TelaInicial.getInstance().getBotaoBuscar();
+			Point p = button.getLocationOnScreen();
+		    Robot r = new Robot();
+		    r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
+		    r.mousePress(InputEvent.BUTTON1_MASK);
+		    try { Thread.sleep(3000); } catch (Exception e) {}
+		    r.mouseRelease(InputEvent.BUTTON1_MASK);
+		}
+	    catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			fail("awt exception");
+		}
 	}
 
 }
