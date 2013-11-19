@@ -39,6 +39,7 @@ public class ItemDAOTest {
 		assertEquals(itemCriado, true);
 	}
 	
+	@Test
 	public void testCriarItemQualquerConstrutorCompleto()
 	{
 		Item itemFesta = new Item("44680", "the great and powerful trixie", 1,new Float(100.00));
@@ -109,6 +110,7 @@ public class ItemDAOTest {
 		}
 	}
 	
+	@Test
 	public void testBuscarItemPorNome()
 	{
 		Item itemBuscar = new Item();
