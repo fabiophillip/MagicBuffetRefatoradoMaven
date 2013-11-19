@@ -179,4 +179,8 @@ public class telaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel SenhaLabel;
     private javax.swing.JPasswordField senhaTexto;
     // End of variables declaration//GEN-END:variables
+    
+    public javax.swing.JButton getEntrar() {
+		return Entrar;
+	}
 }
