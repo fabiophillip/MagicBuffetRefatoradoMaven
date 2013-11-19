@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import controler.Gerente;
+import controler.Pessoa;
 import entidadesDAO.GerenteDAO;
 
 public class GerenteDAOTest {
@@ -18,6 +19,15 @@ public class GerenteDAOTest {
 		gerenteLimparBd.setLogin("fulanoQualquer");
 		gerenteLimparBd.setSenha("123667");
 		gerenteDao.remover(gerenteLimparBd);//se ja existir esse gerente...
+		
+		gerenteLimparBd.setLogin("haruglory");
+		gerenteLimparBd.setSenha("umasenhaqualquer");
+		gerenteDao.remover(gerenteLimparBd);//se ja existir esse gerente...
+		
+		gerenteLimparBd.setLogin("phikun");
+		gerenteLimparBd.setSenha("umdoistres");
+		gerenteDao.remover(gerenteLimparBd);//se ja existir esse gerente...
+		
 		
 		gerenteDao = new GerenteDAO();
 		Gerente gerenteParaBuscarBd = new Gerente();
@@ -33,6 +43,7 @@ public class GerenteDAOTest {
 		gerenteDao.remover(gerenteParaRemover);//se ja existir esse gerente...
 		gerenteDao.criar(gerenteParaRemover);
 		
+		
 	}
 
 	@Test
@@ -43,6 +54,20 @@ public class GerenteDAOTest {
 		novoGerente.setSenha("123667");
 		boolean criouGerente = gerenteDao.criar(novoGerente);
 		assertEquals(criouGerente, true);
+	}
+	
+	@Test
+	public void testCriarUmGerenteConstrutorCompleto()
+	{
+		Gerente gerente = new Gerente("44352691046", 2977269, "phikun", "59022250", "Rua dom jose tomaz ", "Tirol", "8499243511", 1051, "Fabio Phillip", Pessoa.getStringGerente(), "Natal", "umdoistres","phikun");
+		boolean criouGerente = gerenteDao.criar(gerente);
+		assertEquals(criouGerente, true);
+	}
+	
+	@Test
+	public void testCriarUmGerenteConstrutorSimples()
+	{
+		Gerente gerente = new Gerente("haruglory", "umasenhaqualquer");
 	}
 	
 	@Test
@@ -84,6 +109,8 @@ public class GerenteDAOTest {
 			fail("buscar gerente com sql injection esta dando certo e era para falhar");
 		}
 	}
+	
+	
 	
 	
 
