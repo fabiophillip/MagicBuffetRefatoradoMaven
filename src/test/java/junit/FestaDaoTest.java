@@ -31,8 +31,9 @@ public class FestaDaoTest {
 	
 		festaDao.remover(novaFesta2);
 		
-		Festa festaPraBuscar = new Festa();
-		festaPraBuscar.setDataInicio("2013/10/21");
+		Festa festaPraBuscar = new Festa("pacote Completo", "Moranguinho", "Normal", "556699999", 3, "Rua Carmosina" , 
+				"2013/10/21", "2013/10/21", Time.valueOf("08:00:00"), true);
+		/*festaPraBuscar.setDataInicio("2013/10/21");
 		festaPraBuscar.setEstiloFesta("Normal");
 		festaPraBuscar.setHoraInicio(Time.valueOf("08:00:00"));
 		festaPraBuscar.setIdFesta("123787691");
@@ -41,7 +42,7 @@ public class FestaDaoTest {
 		festaPraBuscar.setPessoaCPF("556699999");
 		festaPraBuscar.setQuantidadeConvidados(3);
 		festaPraBuscar.setTema("Moranguinho");
-		festaPraBuscar.setExterno(true);
+		festaPraBuscar.setExterno(true);*/
 		festaDao.remover(festaPraBuscar);//se ja existia
 		festaDao.criar(festaPraBuscar);
 	}
