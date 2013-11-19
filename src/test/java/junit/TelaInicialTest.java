@@ -17,7 +17,7 @@ import abbot.finder.MultipleComponentsFoundException;
 import abbot.tester.JTextComponentTester;
 import view.TelaInicial;
 
-public class TelaInicialTest  extends ComponentTestFixture
+public class TelaInicialTest  //extends ComponentTestFixture
 {
 	/*public TelaInicialTest(String name) {
 		super(name);
