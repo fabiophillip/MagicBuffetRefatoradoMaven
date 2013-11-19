@@ -54,7 +54,6 @@ public class TelaInicial extends javax.swing.JFrame {
         TEMA = new javax.swing.JButton();
         ITENS = new javax.swing.JButton();
         BotaoBuscar = new javax.swing.JButton();
-        BotaoBuscar.setName("botaoBuscar");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -138,8 +137,8 @@ public class TelaInicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cadastrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrosActionPerformed
-    Cadastros tela = new Cadastros();
+    public void cadastrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrosActionPerformed
+    	Cadastros tela = new Cadastros();
     String [] options = new String[] {"Gerente", "Cliente", "Monitor"};
     
     int resposta = JOptionPane.showOptionDialog(null, "Escolha o tipo de cadastro", "Opcoes",
@@ -174,7 +173,6 @@ public class TelaInicial extends javax.swing.JFrame {
                 tela.setVisible(true);
             }
      this.setVisible(false);
-     
     }//GEN-LAST:event_cadastrosActionPerformed
 
     private void BotaoBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarActionPerformed
@@ -264,16 +262,41 @@ public class TelaInicial extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    
-    public javax.swing.JButton getBotaoBuscar() {
-		return BotaoBuscar;
-	}
     private javax.swing.JButton BotaoBuscar;
-	private javax.swing.JButton FESTA;
+    private javax.swing.JButton FESTA;
     private javax.swing.JButton ITENS;
     private javax.swing.JButton PACOTE;
     private javax.swing.JButton TEMA;
     private javax.swing.JButton cadastros;
     // End of variables declaration//GEN-END:variables
-}
 
+	public javax.swing.JButton getBotaoBuscar() {
+		return BotaoBuscar;
+	}
+
+	public javax.swing.JButton getFESTA() {
+		return FESTA;
+	}
+
+	public javax.swing.JButton getITENS() {
+		return ITENS;
+	}
+
+
+	public javax.swing.JButton getPACOTE() {
+		return PACOTE;
+	}
+
+
+	public javax.swing.JButton getTEMA() {
+		return TEMA;
+	}
+
+
+
+	public javax.swing.JButton getCadastros() {
+		return cadastros;
+	}
+	
+	
+}
