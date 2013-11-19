@@ -19,7 +19,7 @@ import view.TelaInicial;
 
 
 
-
+@RunWith(CacioTestRunner.class)
 public class TelaInicialRobotTest {
 	
 	
