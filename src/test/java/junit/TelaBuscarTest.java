@@ -161,8 +161,10 @@ public class TelaBuscarTest {
         
 
 		}
-		catch (Exception e) {
+		catch (Exception e) 
+		{
             // TODO Auto-generated catch block
+			System.out.println("deu excecao no testBuscarClienteExiste:" + e.getMessage());
             e.printStackTrace();
             fail("falhou buscar cliente que existe");
 		}
