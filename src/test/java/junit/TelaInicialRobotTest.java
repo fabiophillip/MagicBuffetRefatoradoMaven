@@ -16,6 +16,9 @@ import javax.swing.JFrame;
 
 
 
+
+
+
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -54,24 +57,28 @@ public class TelaInicialRobotTest {
                 try
                 {
 
-                        try { Thread.sleep(3000); } catch (Exception e) {}
-
+                	try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
                         AbstractButton button = TelaInicial.getInstance().getBotaoBuscar();
 
                         Point p = button.getLocationOnScreen();
 
                     final Robot r = new Robot();
+                    r.delay(3000);
+                    
                     r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
                     r.mousePress(InputEvent.BUTTON1_MASK);
-                    try { Thread.sleep(3000); } catch (Exception e) {}
-                    java.awt.EventQueue.invokeLater(new Runnable() {
-                        public void run() 
-                        {
-                        	 r.mouseRelease(InputEvent.BUTTON1_MASK);
-                        }
-                    }); 
                     
-                    try { Thread.sleep(3000); } catch (Exception e) {}
+                    r.delay(3000);
+                    r.mouseRelease(InputEvent.BUTTON1_MASK);
+                    
+                    
+					r.delay(3000);
+                    
 
                 }
                 catch (AWTException e) {
@@ -85,173 +92,192 @@ public class TelaInicialRobotTest {
         @Test
         public void testClicarNoBotaoFesta() 
         {
+        	try
+            {
+
+            	try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                    AbstractButton button = TelaInicial.getInstance().getFESTA();
+
+                    Point p = button.getLocationOnScreen();
+
+                final Robot r = new Robot();
+                r.delay(3000);
                 
-                try
-                {
+                r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
+                r.mousePress(InputEvent.BUTTON1_MASK);
+                
+                r.delay(3000);
+                r.mouseRelease(InputEvent.BUTTON1_MASK);
+                
+                
+				r.delay(3000);
+                
 
-                        try { Thread.sleep(3000); } catch (Exception e) {}
-
-                        AbstractButton button = TelaInicial.getInstance().getFESTA();
-
-                        Point p = button.getLocationOnScreen();
-
-                    final Robot r = new Robot();
-                    r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
-                    r.mousePress(InputEvent.BUTTON1_MASK);
-                    try { Thread.sleep(3000); } catch (Exception e) {}
-                    java.awt.EventQueue.invokeLater(new Runnable() {
-                        public void run() 
-                        {
-                        	 r.mouseRelease(InputEvent.BUTTON1_MASK);
-                        }
-                    }); 
-                    
-                    try { Thread.sleep(3000); } catch (Exception e) {}
-
-                }
-                catch (AWTException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                        fail("falhou clicar no botao festa");
-                }
+            }
+            catch (AWTException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                    fail("falhou clicar no botao festa");
+            }
         }
         
         @Test
         public void testClicarNoBotaoItens() 
         {
+        	try
+            {
+
+            	try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                    AbstractButton button = TelaInicial.getInstance().getITENS();
+
+                    Point p = button.getLocationOnScreen();
+
+                final Robot r = new Robot();
+                r.delay(3000);
                 
-                try
-                {
+                r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
+                r.mousePress(InputEvent.BUTTON1_MASK);
+                
+                r.delay(3000);
+                r.mouseRelease(InputEvent.BUTTON1_MASK);
+                
+                
+				r.delay(3000);
+                
 
-                        try { Thread.sleep(3000); } catch (Exception e) {}
-
-                        AbstractButton button = TelaInicial.getInstance().getITENS();
-
-                        Point p = button.getLocationOnScreen();
-
-                    final Robot r = new Robot();
-                    r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
-                    r.mousePress(InputEvent.BUTTON1_MASK);
-                    try { Thread.sleep(3000); } catch (Exception e) {}
-                    java.awt.EventQueue.invokeLater(new Runnable() {
-                        public void run() 
-                        {
-                        	 r.mouseRelease(InputEvent.BUTTON1_MASK);
-                        }
-                    }); 
-                    
-                    try { Thread.sleep(3000); } catch (Exception e) {}
-
-                }
-                catch (AWTException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                        fail("falhou clicar no botao itens");
-                }
+            }
+            catch (AWTException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                    fail("falhou clicar no botao itens");
+            }
         }
         
         @Test
         public void testClicarNoBotaoPacote() 
         {
+        	try
+            {
+
+            	try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                    AbstractButton button = TelaInicial.getInstance().getPACOTE();
+
+                    Point p = button.getLocationOnScreen();
+
+                final Robot r = new Robot();
+                r.delay(3000);
                 
-                try
-                {
+                r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
+                r.mousePress(InputEvent.BUTTON1_MASK);
+                
+                r.delay(3000);
+                r.mouseRelease(InputEvent.BUTTON1_MASK);
+                
+                
+				r.delay(3000);
+                
 
-                        try { Thread.sleep(3000); } catch (Exception e) {}
-
-                        AbstractButton button = TelaInicial.getInstance().getPACOTE();
-
-                        Point p = button.getLocationOnScreen();
-
-                    final Robot r = new Robot();
-                    r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
-                    r.mousePress(InputEvent.BUTTON1_MASK);
-                    try { Thread.sleep(3000); } catch (Exception e) {}
-                    java.awt.EventQueue.invokeLater(new Runnable() {
-                        public void run() 
-                        {
-                        	 r.mouseRelease(InputEvent.BUTTON1_MASK);
-                        }
-                    }); 
-                    
-                    try { Thread.sleep(3000); } catch (Exception e) {}
-
-                }
-                catch (AWTException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                        fail("falhou clicar no botao pacote");
-                }
+            }
+            catch (AWTException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                    fail("falhou clicar no botao pacote");
+            }
         }
         
         @Test
         public void testClicarNoBotaoTema() 
         {
                 
-                try
-                {
+        	try
+            {
 
-                        try { Thread.sleep(3000); } catch (Exception e) {}
+            	try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                    AbstractButton button = TelaInicial.getInstance().getTEMA();
 
-                        AbstractButton button = TelaInicial.getInstance().getTEMA();
+                    Point p = button.getLocationOnScreen();
 
-                        Point p = button.getLocationOnScreen();
+                final Robot r = new Robot();
+                r.delay(3000);
+                
+                r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
+                r.mousePress(InputEvent.BUTTON1_MASK);
+                
+                r.delay(3000);
+                r.mouseRelease(InputEvent.BUTTON1_MASK);
+                
+                
+				r.delay(3000);
+                
 
-                    final Robot r = new Robot();
-                    r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
-                    r.mousePress(InputEvent.BUTTON1_MASK);
-                    try { Thread.sleep(3000); } catch (Exception e) {}
-                    java.awt.EventQueue.invokeLater(new Runnable() {
-                        public void run() 
-                        {
-                        	 r.mouseRelease(InputEvent.BUTTON1_MASK);
-                        }
-                    }); 
-                    
-                    try { Thread.sleep(3000); } catch (Exception e) {}
-
-                }
-                catch (AWTException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                        fail("falhou clicar no botao tema");
-                }
+            }
+            catch (AWTException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                    fail("falhou clicar no botao tema");
+            }
         }
         
         @Test
         public void testClicarNoUltimoBotaoCadastros() 
         {
                 
-                try
-                {
+        	try
+            {
 
-                        try { Thread.sleep(3000); } catch (Exception e) {}
+            	try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                    AbstractButton button = TelaInicial.getInstance().getCadastros();
 
-                        AbstractButton button = TelaInicial.getInstance().getCadastros();
+                    Point p = button.getLocationOnScreen();
 
-                        Point p = button.getLocationOnScreen();
+                final Robot r = new Robot();
+                r.delay(3000);
+                
+                r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
+                r.mousePress(InputEvent.BUTTON1_MASK);
+                
+                r.delay(3000);
+                r.mouseRelease(InputEvent.BUTTON1_MASK);
+                
+                
+				r.delay(3000);
+				
+				r.keyPress(KeyEvent.VK_ENTER);
+				
+				r.delay(3000);
+                
 
-                    final Robot r = new Robot();
-                    r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
-                    r.mousePress(InputEvent.BUTTON1_MASK);
-                    try { Thread.sleep(3000); } catch (Exception e) {}
-                    java.awt.EventQueue.invokeLater(new Runnable() {
-                        public void run() 
-                        {
-                        	 r.mouseRelease(InputEvent.BUTTON1_MASK);
-                        }
-                    }); 
-                    
-                    try { Thread.sleep(3000); } catch (Exception e) {}
-                    r.keyPress(KeyEvent.VK_ENTER);
-                    try { Thread.sleep(3000); } catch (Exception e) {}
-
-                }
-                catch (AWTException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                        fail("falhou clicar no botao cadastros");
-                }
+            }
+            catch (AWTException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                    fail("falhou clicar no botao buscar");
+            }
         }
         
         
