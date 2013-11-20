@@ -19,6 +19,8 @@ import javax.swing.JFrame;
 
 
 
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -46,6 +48,20 @@ public class TelaInicialRobotTest {
                 java.awt.EventQueue.invokeLater(new Runnable() {
                     public void run() {
                         TelaInicial.getInstance().setVisible(true);
+                    }
+                }); 
+        }
+        
+        @After
+        public void tearDown() throws Exception 
+        {
+                 
+                //</editor-fold>
+
+                /* Create and display the form */
+                java.awt.EventQueue.invokeLater(new Runnable() {
+                    public void run() {
+                        TelaInicial.getInstance().destruirTela();
                     }
                 }); 
         }

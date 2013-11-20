@@ -37,6 +37,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private TelaInicial() {
     	DAOTrabalhaComItens = FabricaDeDAO.criarItemDAO();
         initComponents();
+        this.setAlwaysOnTop(true);
     }
 
     /**
@@ -298,5 +299,10 @@ public class TelaInicial extends javax.swing.JFrame {
 		return cadastros;
 	}
 	
+	public void destruirTela()
+	{
+		this.dispose();
+		instance = null;
+	}
 	
 }
