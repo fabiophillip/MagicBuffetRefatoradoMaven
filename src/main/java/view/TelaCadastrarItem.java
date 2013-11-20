@@ -288,4 +288,25 @@ public class TelaCadastrarItem extends javax.swing.JFrame {
     private javax.swing.JTextField textoQuantidade;
     private HintTextField textopreco;
     // End of variables declaration//GEN-END:variables
+
+	public javax.swing.JButton getSALVAR() {
+		return SALVAR;
+	}
+
+	public javax.swing.JTextField getTextoNomeItem() {
+		return textoNomeItem;
+	}
+
+	public javax.swing.JTextField getTextoQuantidade() {
+		return textoQuantidade;
+	}
+
+	public HintTextField getTextopreco() {
+		return textopreco;
+	}
+
+	public javax.swing.JButton getCANCELAR() {
+		return CANCELAR;
+	}
+	
 }
