@@ -37,6 +37,19 @@ public class TelaBuscarTest {
 		TelaBuscar.getInstance().getData().setCalendar(null);
 	}
 	
+	@After
+    public void tearDown() throws Exception 
+    {
+             
+            //</editor-fold>
+
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                	TelaBuscar.getInstance().destruirTela();
+                }
+            }); 
+    }
 
 	@Test
 	public void testBuscarClienteSemPreencherNada() 
@@ -69,7 +82,7 @@ public class TelaBuscarTest {
         
 
 		}
-		catch (AWTException e) {
+		catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
             fail("falhou buscar cliente sem preencher nada");
@@ -113,7 +126,7 @@ public class TelaBuscarTest {
         
 
 		}
-		catch (AWTException e) {
+		catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
             fail("falhou buscar cliente que nao existe");
@@ -153,7 +166,7 @@ public class TelaBuscarTest {
         
 
 		}
-		catch (AWTException e) {
+		catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
             fail("falhou buscar cliente que existe");
@@ -193,7 +206,7 @@ public class TelaBuscarTest {
         
 
 		}
-		catch (AWTException e) {
+		catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
             fail("falhou buscar festa sem preencher nada");
@@ -237,7 +250,7 @@ public class TelaBuscarTest {
         
 
 		}
-		catch (AWTException e) {
+		catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
             fail("falhou buscar festa que nao existe");
@@ -275,7 +288,7 @@ public class TelaBuscarTest {
         
 
 		}
-		catch (AWTException e) {
+		catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
             fail("falhou buscar monitor sem preencher nada");
@@ -320,7 +333,7 @@ public class TelaBuscarTest {
         
 
 		}
-		catch (AWTException e) {
+		catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
             fail("falhou buscar monitor que nao existe");
