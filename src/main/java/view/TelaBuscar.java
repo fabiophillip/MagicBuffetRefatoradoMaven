@@ -88,7 +88,7 @@ public class TelaBuscar extends javax.swing.JFrame
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Data");
 
-       
+        interrogacaoData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/interrogacao_1.png"))); // NOI18N
 
         botaoBuscar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botaoBuscar.setText("Buscar");
@@ -342,4 +342,38 @@ public class TelaBuscar extends javax.swing.JFrame
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
+	public javax.swing.JRadioButton getFestaRB() {
+		return FestaRB;
+	}
+
+	public void setFestaRB(javax.swing.JRadioButton festaRB) {
+		FestaRB = festaRB;
+	}
+
+	public javax.swing.JRadioButton getClienteRB() {
+		return ClienteRB;
+	}
+
+	public javax.swing.JRadioButton getMonitorRB() {
+		return MonitorRB;
+	}
+
+	public javax.swing.JButton getBotaoBuscar() {
+		return botaoBuscar;
+	}
+
+	public javax.swing.JTextField getCpfText() {
+		return cpfText;
+	}
+
+	public com.toedter.calendar.JDateChooser getData() {
+		return data;
+	}
+	
+	public void destruirTela()
+	{
+		this.dispose();
+		instance = null;
+	}
 }
