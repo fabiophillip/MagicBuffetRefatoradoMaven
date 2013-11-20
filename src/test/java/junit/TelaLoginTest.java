@@ -1,3 +1,5 @@
+
+
 package junit;
 
 import static org.junit.Assert.*;
@@ -11,13 +13,8 @@ import java.awt.event.KeyEvent;
 import javax.swing.JButton;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 
-import controler.Gerente;
-import entidadesDAO.GerenteDAO;
 import view.telaLogin;
 
 
@@ -44,18 +41,14 @@ public class TelaLoginTest {
 			//fail("Not yet implemented");
 			try { Thread.sleep(3000); } catch (Exception e) {}
 			JButton botaoEntrar = telaLogin.getEntrar();
-			Point p = botaoEntrar.getLocationOnScreen();
 			Robot r = new Robot();
+			r.delay(3000);
+			Point p = botaoEntrar.getLocationOnScreen();
 	        r.mouseMove(p.x + botaoEntrar.getWidth() / 2, p.y + botaoEntrar.getHeight() / 2);
 	        r.mousePress(InputEvent.BUTTON1_MASK);
-	        try { Thread.sleep(3000); } catch (Exception e) {}
+	        r.delay(3000);
 	        r.mouseRelease(InputEvent.BUTTON1_MASK);
-	        java.awt.EventQueue.invokeLater(new Runnable() {
-	            public void run() {
-	            	 try { Thread.sleep(3000); } catch (Exception e) {}
-	                
-	            }
-	        });
+	        r.delay(3000);
 		}
 		catch(AWTException exc)
 		{
@@ -65,11 +58,8 @@ public class TelaLoginTest {
 
 	}
 	
-
-	
 	
 	
 	
 
 }
-
