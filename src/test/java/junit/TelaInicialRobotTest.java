@@ -6,9 +6,11 @@ import java.awt.AWTException;
 import java.awt.Point;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 
 import javax.swing.AbstractButton;
 import javax.swing.JFrame;
+
 
 
 
@@ -23,11 +25,11 @@ import view.TelaInicial;
 
 import org.junit.runner.RunWith;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
 public class TelaInicialRobotTest {
         
         
-    private JFrame  frame;
+    private JFrame frame;
 
         
         
@@ -58,11 +60,17 @@ public class TelaInicialRobotTest {
 
                         Point p = button.getLocationOnScreen();
 
-                    Robot r = new Robot();
+                    final Robot r = new Robot();
                     r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
                     r.mousePress(InputEvent.BUTTON1_MASK);
                     try { Thread.sleep(3000); } catch (Exception e) {}
-                    r.mouseRelease(InputEvent.BUTTON1_MASK);
+                    java.awt.EventQueue.invokeLater(new Runnable() {
+                        public void run() 
+                        {
+                        	 r.mouseRelease(InputEvent.BUTTON1_MASK);
+                        }
+                    }); 
+                    
                     try { Thread.sleep(3000); } catch (Exception e) {}
 
                 }
@@ -87,11 +95,17 @@ public class TelaInicialRobotTest {
 
                         Point p = button.getLocationOnScreen();
 
-                    Robot r = new Robot();
+                    final Robot r = new Robot();
                     r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
                     r.mousePress(InputEvent.BUTTON1_MASK);
                     try { Thread.sleep(3000); } catch (Exception e) {}
-                    r.mouseRelease(InputEvent.BUTTON1_MASK);
+                    java.awt.EventQueue.invokeLater(new Runnable() {
+                        public void run() 
+                        {
+                        	 r.mouseRelease(InputEvent.BUTTON1_MASK);
+                        }
+                    }); 
+                    
                     try { Thread.sleep(3000); } catch (Exception e) {}
 
                 }
@@ -115,11 +129,17 @@ public class TelaInicialRobotTest {
 
                         Point p = button.getLocationOnScreen();
 
-                    Robot r = new Robot();
+                    final Robot r = new Robot();
                     r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
                     r.mousePress(InputEvent.BUTTON1_MASK);
                     try { Thread.sleep(3000); } catch (Exception e) {}
-                    r.mouseRelease(InputEvent.BUTTON1_MASK);
+                    java.awt.EventQueue.invokeLater(new Runnable() {
+                        public void run() 
+                        {
+                        	 r.mouseRelease(InputEvent.BUTTON1_MASK);
+                        }
+                    }); 
+                    
                     try { Thread.sleep(3000); } catch (Exception e) {}
 
                 }
@@ -143,11 +163,17 @@ public class TelaInicialRobotTest {
 
                         Point p = button.getLocationOnScreen();
 
-                    Robot r = new Robot();
+                    final Robot r = new Robot();
                     r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
                     r.mousePress(InputEvent.BUTTON1_MASK);
                     try { Thread.sleep(3000); } catch (Exception e) {}
-                    r.mouseRelease(InputEvent.BUTTON1_MASK);
+                    java.awt.EventQueue.invokeLater(new Runnable() {
+                        public void run() 
+                        {
+                        	 r.mouseRelease(InputEvent.BUTTON1_MASK);
+                        }
+                    }); 
+                    
                     try { Thread.sleep(3000); } catch (Exception e) {}
 
                 }
@@ -171,11 +197,17 @@ public class TelaInicialRobotTest {
 
                         Point p = button.getLocationOnScreen();
 
-                    Robot r = new Robot();
+                    final Robot r = new Robot();
                     r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
                     r.mousePress(InputEvent.BUTTON1_MASK);
                     try { Thread.sleep(3000); } catch (Exception e) {}
-                    r.mouseRelease(InputEvent.BUTTON1_MASK);
+                    java.awt.EventQueue.invokeLater(new Runnable() {
+                        public void run() 
+                        {
+                        	 r.mouseRelease(InputEvent.BUTTON1_MASK);
+                        }
+                    }); 
+                    
                     try { Thread.sleep(3000); } catch (Exception e) {}
 
                 }
@@ -199,11 +231,19 @@ public class TelaInicialRobotTest {
 
                         Point p = button.getLocationOnScreen();
 
-                    Robot r = new Robot();
+                    final Robot r = new Robot();
                     r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
                     r.mousePress(InputEvent.BUTTON1_MASK);
                     try { Thread.sleep(3000); } catch (Exception e) {}
-                    r.mouseRelease(InputEvent.BUTTON1_MASK);
+                    java.awt.EventQueue.invokeLater(new Runnable() {
+                        public void run() 
+                        {
+                        	 r.mouseRelease(InputEvent.BUTTON1_MASK);
+                        }
+                    }); 
+                    
+                    try { Thread.sleep(3000); } catch (Exception e) {}
+                    r.keyPress(KeyEvent.VK_ENTER);
                     try { Thread.sleep(3000); } catch (Exception e) {}
 
                 }
