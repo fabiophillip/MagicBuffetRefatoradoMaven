@@ -74,38 +74,7 @@ public class TelaLoginTest {
 		
 	}
 	
-	/*
-	@Test
-	public void testZEntrarComLoginSenhaErrada()
-	{
-		Gerente gerenteCriar = new Gerente("admin", "admin");
-		GerenteDAO gerenteDAO = new GerenteDAO();
-		gerenteDAO.remover(gerenteCriar);
-		gerenteDAO.criar(gerenteCriar);
-		try { Thread.sleep(3000); } catch (Exception e) {}
-		telaLogin.getLoginTexto().setText("admin");
-		try { Thread.sleep(3000); } catch (Exception e) {}
-		telaLogin.EntrarActionPerformed(null);
-		try { Thread.sleep(3000); } catch (Exception e) {}
-		try {
-			Robot r = new Robot();
-			try { Thread.sleep(3000); } catch (Exception e) {}
-			 r.mousePress(InputEvent.BUTTON1_MASK);
-			 try { Thread.sleep(3000); } catch (Exception e) {}
-			try { Thread.sleep(3000); } catch (Exception e) {}
-			r.keyPress(KeyEvent.VK_ENTER);
-			
-			try { Thread.sleep(3000); } catch (Exception e) {}
-			
-		} catch (AWTException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			fail("test entrar coom login errado da view login está dando bug");
-		}
-		
-		
-		
-	}*/
+	
 	
 	
 
