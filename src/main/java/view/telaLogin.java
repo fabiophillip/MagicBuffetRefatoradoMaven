@@ -118,7 +118,7 @@ public class telaLogin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_EntrarMouseClicked
 
-    private void EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarActionPerformed
+    public void EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarActionPerformed
         // TODO add your handling code here:
         InterfacePessoaDAO gerente = FabricaDeDAO.criarGerenteDAO();
         Gerente manager = (Gerente) gerente.buscar(LoginTexto.getText());
