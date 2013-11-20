@@ -65,14 +65,7 @@ public class TelaLoginTest {
 
 	}
 	
-	@Test
-	public void testEntrarComLoginInexistente()
-	{
-		try { Thread.sleep(3000); } catch (Exception e) {}
-		telaLogin.EntrarActionPerformed(null);
-		try { Thread.sleep(3000); } catch (Exception e) {}
-		
-	}
+
 	
 	
 	
