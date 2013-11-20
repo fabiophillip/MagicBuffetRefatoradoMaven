@@ -30,11 +30,6 @@ public class TelaBuscarTest {
         }); 
 		
 		TelaBuscar.getInstance().toFront();
-		TelaBuscar.getInstance().getCpfText().setText("");
-		TelaBuscar.getInstance().getFestaRB().setSelected(false);
-		TelaBuscar.getInstance().getMonitorRB().setSelected(false);
-		TelaBuscar.getInstance().getClienteRB().setSelected(false);
-		TelaBuscar.getInstance().getData().setCalendar(null);
 	}
 	
 	@After
