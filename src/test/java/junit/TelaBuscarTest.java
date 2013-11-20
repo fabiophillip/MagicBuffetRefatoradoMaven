@@ -23,7 +23,12 @@ public class TelaBuscarTest {
 	@Before
 	public void setUp() throws Exception 
 	{
-		TelaBuscar.getInstance().setVisible(true);
+		java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                TelaBuscar.getInstance().setVisible(true);
+            }
+        }); 
+		
 		TelaBuscar.getInstance().toFront();
 		TelaBuscar.getInstance().getCpfText().setText("");
 		TelaBuscar.getInstance().getFestaRB().setSelected(false);
