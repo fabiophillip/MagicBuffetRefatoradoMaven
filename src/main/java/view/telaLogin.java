@@ -1,16 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
-import InterfaceDAO.InterfacePessoaDAO;
-import controler.Gerente;
-
-import javax.swing.JOptionPane;
-
-import entidadesDAO.FabricaDeDAO;
-import entidadesDAO.GerenteDAO;
 
 /**
  *
@@ -58,11 +47,7 @@ public class telaLogin extends javax.swing.JFrame {
                 EntrarMouseClicked(evt);
             }
         });
-        Entrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EntrarActionPerformed(evt);
-            }
-        });
+       
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,6 +96,7 @@ public class telaLogin extends javax.swing.JFrame {
 
     private void EntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarMouseClicked
             // chama uma classe que valida o login e a senha
+    	System.out.println("chamou entrar mouse clicked!");
         TelaInicial telaInicial = TelaInicial.getInstance();
         this.dispose();
         telaInicial.setVisible(true);
@@ -118,25 +104,7 @@ public class telaLogin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_EntrarMouseClicked
 
-    public void EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarActionPerformed
-        // TODO add your handling code here:
-        InterfacePessoaDAO gerente = FabricaDeDAO.criarGerenteDAO();
-        Gerente manager = (Gerente) gerente.buscar(LoginTexto.getText());
-        
-        if(manager.getLogin() == null)
-            JOptionPane.showMessageDialog(this, "Login nao existe");                   
-        else {
-            if(manager.getSenha().equals(String.valueOf(senhaTexto.getPassword()))){             
-                TelaInicial tela = TelaInicial.getInstance();
-                tela.setVisible(true);            
-        }
-        else{
-                JOptionPane.showMessageDialog(this, "Senha nao confere");
-            }
-        }
-        //ajeitar
-        
-    }//GEN-LAST:event_EntrarActionPerformed
+    
 
     /**
      * @param args the command line arguments
@@ -179,8 +147,18 @@ public class telaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel SenhaLabel;
     private javax.swing.JPasswordField senhaTexto;
     // End of variables declaration//GEN-END:variables
-    
-    public javax.swing.JButton getEntrar() {
+	public javax.swing.JButton getEntrar() {
 		return Entrar;
 	}
+
+	public javax.swing.JTextField getLoginTexto() {
+		return LoginTexto;
+	}
+
+	public javax.swing.JPasswordField getSenhaTexto() {
+		return senhaTexto;
+	}
+    
+	
+    
 }
