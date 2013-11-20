@@ -37,7 +37,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private TelaInicial() {
     	DAOTrabalhaComItens = FabricaDeDAO.criarItemDAO();
         initComponents();
-        this.setAlwaysOnTop(true);
+        this.toFront();
     }
 
     /**
