@@ -119,3 +119,5 @@ before_script:
   - mysql -e 'USE projetobd;INSERT INTO festa VALUES(99,"556699999","Moranguinho","51000000","11","2013-05-22 00:00:00","2013-05-22 00:00:00","05:06:00",1,3,"provencal");'
   
   - mysql -e 'USE projetobd;INSERT INTO pacote_contem_item VALUES ("50", "9090", "pacote Basico");'
+  
+  - mysql -e 'USE projetobd; ALTER TABLE pacote_contem_item ADD CONSTRAINT chavePacote FOREIGN KEY (chavePacote) REFERENCES pacote (IdPacote) ON DELETE CASCADE ON UPDATE CASCADE, ADD CONSTRAINT chaveItem FOREIGN KEY (chaveItem) REFERENCES item (IDItem) ON DELETE CASCADE ON UPDATE CASCADE;'
