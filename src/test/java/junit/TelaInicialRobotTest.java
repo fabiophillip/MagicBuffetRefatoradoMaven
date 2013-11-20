@@ -28,7 +28,7 @@ import view.TelaInicial;
 
 import org.junit.runner.RunWith;
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TelaInicialRobotTest {
         
         
