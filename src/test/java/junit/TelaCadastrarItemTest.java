@@ -164,6 +164,12 @@ public class TelaCadastrarItemTest
             fail("falhou cadastrar preenchendo tudo corretamente");
 		}
 	}
+	
+	@Test
+	public void testTestarMain() 
+	{	
+		telaCadastrarItem.main(null);	
+	}
 			
 
 }
