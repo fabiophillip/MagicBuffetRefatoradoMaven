@@ -91,6 +91,7 @@ public class TelaBuscarTest {
 		}
 		catch (Exception e) {
             // TODO Auto-generated catch block
+			System.out.println("testBuscarClienteSemPreencherNada:" + e.getMessage());
             e.printStackTrace();
             fail("falhou buscar cliente sem preencher nada");
 		}
@@ -108,10 +109,13 @@ public class TelaBuscarTest {
 		
 		try
 		{
-			TelaBuscar.getInstance().getCpfText().setText("00772543411");
 
             final Robot r = new Robot();
             r.delay(3000);
+            
+            TelaBuscar.getInstance().getCpfText().setText("00772543411");
+            
+            r.delay(1000);
             
             AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
 			JRadioButton radioButton = TelaBuscar.getInstance().getClienteRB();
@@ -143,8 +147,10 @@ public class TelaBuscarTest {
         
 
 		}
-		catch (Exception e) {
+		catch (Exception e) 
+		{
             // TODO Auto-generated catch block
+			System.out.println("erro no testBuscarClienteQueNaoExiste:" + e.getMessage());
             e.printStackTrace();
             fail("falhou buscar cliente que nao existe");
 		}
@@ -265,10 +271,12 @@ public class TelaBuscarTest {
 		
 		try
 		{
-			TelaBuscar.getInstance().getCpfText().setText("00772543411");
 
             final Robot r = new Robot();
             r.delay(3000);
+            
+            TelaBuscar.getInstance().getCpfText().setText("00772543411");
+            r.delay(1000);
             
             AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
 			JRadioButton radioButton = TelaBuscar.getInstance().getMonitorRB();
