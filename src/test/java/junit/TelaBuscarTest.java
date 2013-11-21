@@ -170,49 +170,6 @@ public class TelaBuscarTest {
 	
 	
 	@Test
-	public void testBuscarFestaQueNaoExiste() 
-	{
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		try
-		{
-			AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
-			JRadioButton radioButton = TelaBuscar.getInstance().getFestaRB();
-			radioButton.setSelected(true);
-			
-			Calendar.getInstance().set(2013, 11, 20);
-			TelaBuscar.getInstance().getData().setCalendar(Calendar.getInstance());
-            Point p = button.getLocationOnScreen();
-
-            final Robot r = new Robot();
-            r.delay(3000);
-        
-            r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
-            r.mousePress(InputEvent.BUTTON1_MASK);
-        
-            r.delay(3000);
-            r.mouseRelease(InputEvent.BUTTON1_MASK);
-        
-            r.delay(3000);
-            r.keyPress(KeyEvent.VK_ENTER);
-			
-			r.delay(3000);
-        
-
-		}
-		catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            fail("falhou buscar festa que nao existe");
-		}
-	}
-	
-	@Test
 	public void testBuscarMonitorSemPreencherNada() 
 	{
 		try {
