@@ -5,8 +5,6 @@ import java.util.InputMismatchException;
 
 import javax.swing.JDialog;
 
-import junit.AutoDismiss;
-
 
 
 public class VerificadorCamposFormulario 
