@@ -343,5 +343,128 @@ public class TelaBuscarTest {
             fail("falhou buscar monitor que nao existe");
 		}
 	}
+	
+	@Test
+	public void testBuscarClienteExiste() 
+	{
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try
+		{
+
+            final Robot r = new Robot();
+            r.delay(3000);
+
+	    TelaBuscar.getInstance().getCpfText().setText("21346655");
+  	    r.delay(1000);
+
+	    AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
+	    JRadioButton radioButton = TelaBuscar.getInstance().getClienteRB();
+
+	    while(TelaBuscar.getInstance().isShowing() == false)
+	    {
+	    	TelaBuscar.getInstance().show();
+	    }
+            Point p = radioButton.getLocationOnScreen();
+        
+            r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
+            r.mousePress(InputEvent.BUTTON1_MASK);
+        
+            r.delay(3000);
+            r.mouseRelease(InputEvent.BUTTON1_MASK);
+        
+        
+            r.delay(3000);
+
+	    Point p2 = button.getLocationOnScreen();
+        
+            r.mouseMove(p2.x + button.getWidth() / 2, p2.y + button.getHeight() / 2);
+            r.mousePress(InputEvent.BUTTON1_MASK);
+        
+            r.delay(3000);
+            r.mouseRelease(InputEvent.BUTTON1_MASK);
+        
+        
+            r.delay(3000);
+        
+	    
+
+		}
+		catch (Exception e) 
+		{
+            // TODO Auto-generated catch block
+			System.out.println("deu excecao no testBuscarClienteExiste:" + e.getMessage());
+            e.printStackTrace();
+            fail("falhou buscar cliente que existe");
+		}
+	}
+
+	@Test
+	public void testBuscarFestaQueNaoExiste() 
+	{
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try
+		{
+
+            final Robot r = new Robot();
+            r.delay(3000);
+
+	    Calendar.getInstance().set(2013, 11, 20);
+	    TelaBuscar.getInstance().getData().setCalendar(Calendar.getInstance());
+            r.delay(1000);
+
+	    AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
+	    JRadioButton radioButton = TelaBuscar.getInstance().getFestaRB();
+
+	    while(TelaBuscar.getInstance().isShowing() == false)
+	    {
+	    	TelaBuscar.getInstance().show();
+	    }
+
+	    Point p = radioButton.getLocationOnScreen();
+        
+            r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
+            r.mousePress(InputEvent.BUTTON1_MASK);
+        
+            r.delay(3000);
+            r.mouseRelease(InputEvent.BUTTON1_MASK);
+        
+            r.delay(3000);
+
+	    Point p2 = button.getLocationOnScreen();
+        
+            r.mouseMove(p2.x + button.getWidth() / 2, p2.y + button.getHeight() / 2);
+            r.mousePress(InputEvent.BUTTON1_MASK);
+        
+            r.delay(3000);
+            r.mouseRelease(InputEvent.BUTTON1_MASK);
+        
+            r.delay(3000);
+
+		
+            r.keyPress(KeyEvent.VK_ENTER);
+			
+			r.delay(3000);
+        
+
+		}
+		catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            fail("falhou buscar festa que nao existe");
+		}
+	}
 
 }
