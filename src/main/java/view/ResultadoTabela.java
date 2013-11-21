@@ -10,9 +10,13 @@ import controler.Festa;
 import controler.Pessoa;
 import controler.Tema;
 import entidadesDAO.FabricaDeDAO;
+
 import javax.swing.JOptionPane;
+
 import java.util.ArrayList;
+
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -125,11 +129,12 @@ public class ResultadoTabela extends javax.swing.JFrame {
 
     private void InformacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InformacoesActionPerformed
         // TODO add your handling code here:
-        if(tipoPessoa.equals("")){  
+        if(tipoPessoa.equals("") & tabela.getSelectedRowCount() != 0){  
             mostrarInformacoesDeUmaFesta();            
         }
-        else {         
-        mostrarInformacoesDeUmaPessoa();     
+        else if(tabela.getSelectedRowCount() != 0)
+        {         
+        	mostrarInformacoesDeUmaPessoa();     
         }
     }//GEN-LAST:event_InformacoesActionPerformed
 
@@ -196,24 +201,40 @@ public class ResultadoTabela extends javax.swing.JFrame {
         result.setVisible(true);
 	}
 
-    private void ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirActionPerformed
+    private void ExcluirActionPerformed(java.awt.event.ActionEvent evt) 
+    {//GEN-FIRST:event_ExcluirActionPerformed
         // TODO add your handling code here:
-    int resposta = JOptionPane.showConfirmDialog( null,"Tem certeza que quer exlcuir o cliente do sistema?","Confirmacao", JOptionPane.YES_NO_OPTION);
-        if(resposta == JOptionPane.YES_OPTION){
-            int linha = tabela.getSelectedRow();            
-            Object valueAt = tabela.getValueAt(linha, 1);
-            String cpf = valueAt.toString();
-           
-            Pessoa p = (Pessoa) DAOPessoas.buscar(cpf, "CLIENTE");
-            DAOPessoas.remover(p);
-           
-            
-            JOptionPane.showMessageDialog(this,"Cliente Removido");
-            TelaBuscar tela = TelaBuscar.getInstance();
-            tela.modelo.removeRow(linha);
-        }       
-            
-    }//GEN-LAST:event_ExcluirActionPerformed
+    	if(tabela.getSelectedRowCount() != 0)
+    	{
+    		 int resposta = JOptionPane.showConfirmDialog( null,"Tem certeza que quer excluir o cliente ou festa do sistema?","Confirmacao", JOptionPane.YES_NO_OPTION);
+    	        if(resposta == JOptionPane.YES_OPTION){
+    	            int linha = tabela.getSelectedRow();
+    	            
+    	            if(this.tipoPessoa.compareTo("") != 0)
+    	            {
+    	            	Object valueAt = tabela.getValueAt(linha, 1);
+        	            String cpf = valueAt.toString();
+        	           
+        	            Pessoa p = (Pessoa) DAOPessoas.buscar(cpf, "CLIENTE");
+        	            DAOPessoas.remover(p);
+        	            JOptionPane.showMessageDialog(this,"cliente Removido");
+    	            }
+    	            else
+    	            {
+    	            	Object valueAt = tabela.getValueAt(linha, 3);
+    	            	String id = valueAt.toString();
+    	            	
+    	            	Festa f = (Festa) DAOFestas.buscar(id);
+    	            	DAOFestas.remover(f);
+    	            	JOptionPane.showMessageDialog(this,"festa Removida");
+    	            }
+    	           
+    	         
+    	            ((DefaultTableModel)this.tabela.getModel()).removeRow(linha);
+    	        }       
+    	}
+    }
+   
 
     
     
@@ -259,4 +280,23 @@ public class ResultadoTabela extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JTable tabela;
     // End of variables declaration//GEN-END:variables
+
+	public javax.swing.JButton getExcluir() 
+	{
+		return Excluir;
+	}
+
+	public javax.swing.JButton getInformacoes() 
+	{
+		return Informacoes;
+	}
+	
+	public void selecionarAPrimeiraLinhaDaTabela()
+	{
+		this.tabela.setRowSelectionInterval(0, 0);
+	}
+
+	public void setTipoPessoa(String tipoPessoa) {
+		this.tipoPessoa = tipoPessoa;
+	}
 }
