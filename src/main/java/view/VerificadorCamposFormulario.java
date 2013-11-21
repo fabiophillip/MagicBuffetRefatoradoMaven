@@ -17,7 +17,7 @@ public class VerificadorCamposFormulario
 				|| CPF.equals("66666666666") || CPF.equals("77777777777") || CPF.equals("88888888888") 
 				|| CPF.equals("99999999999") || (CPF.length() != 11))
 		{
-			AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+			DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 			autoDiS.showMessageDialog(null, "CPF invalido. Por favor, digite um CPF valido");
 			return(false);
 		}
@@ -75,7 +75,7 @@ public class VerificadorCamposFormulario
 			}
 			else
 			{
-				AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+				DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 				autoDiS.showMessageDialog(null, "CPF invalido. Por favor, digite um CPF valido");
 				return(false);
 			}
@@ -83,7 +83,7 @@ public class VerificadorCamposFormulario
 		} 
 		catch(InputMismatchException erro)
 		{
-			AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+			DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 			autoDiS.showMessageDialog(null, "CPF invalido. Por favor, digite um CPF valido");
 			return(false);
 		}
@@ -95,13 +95,13 @@ public class VerificadorCamposFormulario
 	{
 		if(valorCampo.length() == 0)
 		{
-			AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+			DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 			autoDiS.showMessageDialog(null, "campo importante nao preenchido:" + nomeCampo);
         	return false;
 		}
 		else if(stringEhNumerica(valorCampo) == false)
 		{
-			AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+			DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 			autoDiS.showMessageDialog(null, "valor invalido para "+ nomeCampo +", por favor digite um valor valido");
         	return false;
 		}
@@ -110,7 +110,7 @@ public class VerificadorCamposFormulario
 			int campoEmInt = Integer.parseInt(valorCampo);
 			if(campoEmInt < 0 || valorCampo.length() > 11)
 			{
-				AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+				DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 				autoDiS.showMessageDialog(null, "valor invalido para "+ nomeCampo +", por favor digite um valor valido");
 	        	return false;
 			}
@@ -134,7 +134,7 @@ public class VerificadorCamposFormulario
 		}
 		catch(Exception e)
 		{
-			AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+			DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 			autoDiS.showMessageDialog(null, "alguma data eh invalida, por favor informe apenas datas validas");
         	return false;
 		}
@@ -145,14 +145,14 @@ public class VerificadorCamposFormulario
 	{
 		if(valorCampo.length() == 0)
 		{
-			AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+			DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 			autoDiS.showMessageDialog(null, "campo importante nao preenchido:" + queCampoEhEsse);
         	return false;
 		}
 		else if(queCampoEhEsse.length() > 45 || (stringEhNumerica(valorCampo) == true && queCampoEhEsse != "cep") 
 				|| (stringEhNumerica(valorCampo) == false && queCampoEhEsse == "cep"))
 		{
-			AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+			DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 			autoDiS.showMessageDialog(null, queCampoEhEsse + " invalido, por favor informe um valor valido");
         	return false;
 		}
@@ -181,13 +181,13 @@ public class VerificadorCamposFormulario
 	{
 		if(precoEmString.length() == 0)
 		{
-			AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+			DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 			autoDiS.showMessageDialog(null, "por favor, informe um preco");
 			return false;
 		}
 		else if(stringEhNumerica(precoEmString) == false || Double.valueOf(precoEmString) < 0)
 		{
-			AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+			DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 			autoDiS.showMessageDialog(null, "preco invalido, por favor informe outro preco");
 			return false;
 		}
@@ -201,7 +201,7 @@ public class VerificadorCamposFormulario
 	{
 		if(valorDoNome.length() == 0 || valorDoNome.length() > 45 )
     	{
-			AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+			DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 			autoDiS.showMessageDialog(null, "campo " + nomeDoCampo +  " deve ter entre 1 e 45 caracteres. digite um " + nomeDoCampo + " valido");
     		return false;
     	}
@@ -220,7 +220,7 @@ public class VerificadorCamposFormulario
 		}
 		else
 		{
-			AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+			DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 			autoDiS.showMessageDialog(null, "numero de telefone invalido. Por favor, digite um telefone valido");
 			return false;
 		}
