@@ -193,4 +193,16 @@ public class CadastroDeTema extends javax.swing.JFrame {
             }
         });
     }
+
+	public javax.swing.JButton getjButton2() {
+		return jButton2;
+	}
+
+	public javax.swing.JButton getSalvar() {
+		return salvar;
+	}
+
+	public javax.swing.JTextField getNomeTema() {
+		return nomeTema;
+	}
 }
