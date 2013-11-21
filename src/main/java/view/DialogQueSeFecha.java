@@ -11,11 +11,11 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.UIManager;
 
-public class AutoDismiss implements Runnable, ActionListener
+public class DialogQueSeFecha implements Runnable, ActionListener
 {
     private JDialog dialog;
 
-    public AutoDismiss(JDialog dialog)
+    public DialogQueSeFecha(JDialog dialog)
     {
         this.dialog = dialog;
     }
@@ -32,7 +32,7 @@ public class AutoDismiss implements Runnable, ActionListener
       final JOptionPane optionPane = new JOptionPane(message);
       String title = UIManager.getString("OptionPane.messageDialogTitle");
       final JDialog dialog = optionPane.createDialog(parent, title);
-      Timer timer = new Timer(5000, new AutoDismiss(dialog));
+      Timer timer = new Timer(5000, new DialogQueSeFecha(dialog));
       timer.setRepeats(false);
       timer.start();
       if (dialog.isDisplayable())
@@ -47,7 +47,7 @@ public class AutoDismiss implements Runnable, ActionListener
 	
 	public static void main(String args[])
 	{
-		AutoDismiss autoDiS = new AutoDismiss(new JDialog());
+		DialogQueSeFecha autoDiS = new DialogQueSeFecha(new JDialog());
 		autoDiS.showMessageDialog(null, "ok");
 		
 	}
