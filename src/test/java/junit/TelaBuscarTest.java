@@ -100,6 +100,7 @@ public class TelaBuscarTest {
 	@Test
 	public void testBuscarClienteQueNaoExiste() 
 	{
+		TelaBuscar.getInstance().toFront();
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
@@ -107,11 +108,13 @@ public class TelaBuscarTest {
 			e.printStackTrace();
 		}
 		
+		TelaBuscar.getInstance().toFront();
 		try
 		{
 
             final Robot r = new Robot();
             r.delay(3000);
+            TelaBuscar.getInstance().toFront();
             
             TelaBuscar.getInstance().getCpfText().setText("00772543411");
             
