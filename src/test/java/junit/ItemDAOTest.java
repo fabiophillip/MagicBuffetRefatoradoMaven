@@ -49,6 +49,18 @@ public class ItemDAOTest {
 	}
 	
 	@Test
+	public void testCriarItemNomeMuitoGrande()
+	{
+		Item itemFesta = new Item();
+		itemFesta.setIdItem("5729855779");
+		itemFesta.setNomeItem("abababababbababbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		itemFesta.setQuantidadeTotal(3);
+		itemFesta.setPrecoUnidade(new Float(30.40));
+		boolean itemCriado = itemDAO.criar(itemFesta);
+		assertEquals(itemCriado, false);
+	}
+	
+	@Test
 	public void testRemoverItem()
 	{
 		Item itemFestaVouRemover = new Item();
@@ -94,7 +106,7 @@ public class ItemDAOTest {
 		itemDAO.remover(itemFesta);//para testex futuros
 		if(itensResultadoBusca == null || itensResultadoBusca.size() == 0)
 		{
-			fail("buscar todos os itens de festa est√° dando erro");
+			fail("buscar todos os itens de festa est· dando erro");
 		}
 	}
 	
@@ -128,6 +140,60 @@ public class ItemDAOTest {
 			fail("buscar item por nome nao estah funcionando");
 		}
 		
+	}
+	
+	@Test
+	public void testBuscarItemPorIdSqlInjection()
+	{
+		
+		Object itemBuscadoSqlInjection = itemDAO.buscar("()(87722e71'''''&=true");
+		if(itemBuscadoSqlInjection != null)
+		{
+			fail("buscar item de festa por Id funciona com sql injection");
+		}
+	}
+	
+	@Test
+	public void testBuscarItemPorNomeSqlInjection()
+	{
+		
+		Object itemBuscadoSqlInjection = itemDAO.buscarNome("()(87722e71'''''&=true");
+		if(itemBuscadoSqlInjection != null)
+		{
+			fail("buscar item de festa por nome funciona com sql injection");
+		}
+	}
+	
+	@Test
+	public void testBuscarItensDoPacoteSqlInjection()
+	{
+		Pacote pacoteBuscar = new Pacote();
+		pacoteBuscar.setPacoteNome("()(87722e71'''''&=true");
+		ArrayList<Item> itensPacote = itemDAO.buscarItensPacote(pacoteBuscar);
+		if(itensPacote != null)
+		{
+			fail("buscar itens do pacote funciona com sql injection");
+		}
+		
+	}
+	
+	@Test
+	public void atualizarItemNomeMuitoGrande()
+	{
+		Item itemFestaVouAtualizar = new Item();
+		itemFestaVouAtualizar.setIdItem("6979809880");
+		itemFestaVouAtualizar.setNomeItem("cupcakes");
+		itemFestaVouAtualizar.setQuantidadeTotal(20);
+		itemFestaVouAtualizar.setPrecoUnidade(new Float(100.00));
+		itemDAO.remover(itemFestaVouAtualizar);
+		itemDAO.criar(itemFestaVouAtualizar);//eu vou atualizar esse 
+		
+		
+		itemFestaVouAtualizar.setNomeItem("abababababbababbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		boolean atualizou = itemDAO.atualizar(itemFestaVouAtualizar);
+		
+		itemDAO.remover(itemFestaVouAtualizar);//para o reteste
+		assertEquals(false, atualizou);
 	}
 	
 	

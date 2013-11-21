@@ -29,9 +29,7 @@ public class Cadastros extends javax.swing.JFrame {
 	
 	
     private javax.swing.JLabel Login;
-    private javax.swing.JButton botaoCancelar;
     private javax.swing.JButton botaoCancelar1;
-    private javax.swing.JButton botaoSalvar;
     private javax.swing.JButton botaoSalvar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -60,25 +58,16 @@ public class Cadastros extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSlider jSlider1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField textoBairro;
     private javax.swing.JTextField textoBairro1;
-    private javax.swing.JTextField textoCEP;
     private javax.swing.JTextField textoCEP1;
-    private javax.swing.JTextField textoCPF;
     private javax.swing.JTextField textoCPF1;
-    private javax.swing.JTextField textoCidade;
     private javax.swing.JTextField textoCidade1;
     private javax.swing.JTextField textoLogin;
-    private javax.swing.JTextField textoNome;
     private javax.swing.JTextField textoNome1;
-    private javax.swing.JTextField textoNumero;
     private javax.swing.JTextField textoNumero1;
-    private javax.swing.JTextField textoRG;
     private javax.swing.JTextField textoRG1;
-    private javax.swing.JTextField textoRua;
     private javax.swing.JTextField textoRua1;
     private javax.swing.JPasswordField textoSenha;
-    private javax.swing.JTextField textoTelefone;
     private javax.swing.JFormattedTextField textoTelefone1;
     private javax.swing.JLabel tipoCadastro;
 	
@@ -262,23 +251,13 @@ public class Cadastros extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 	private void inicializarComponentesUsadosNaGUI() {
-		botaoCancelar = new javax.swing.JButton();
-        textoCidade = new javax.swing.JTextField();
-        textoTelefone = new javax.swing.JTextField();
+       
         jSeparator2 = new javax.swing.JSeparator();
-        botaoSalvar = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
-        textoNumero = new javax.swing.JTextField();
-        textoCEP = new javax.swing.JTextField();
-        textoRua = new javax.swing.JTextField();
-        textoBairro = new javax.swing.JTextField();
-        textoCPF = new javax.swing.JTextField();
-        textoRG = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        textoNome = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -325,73 +304,6 @@ public class Cadastros extends javax.swing.JFrame {
 	
 	private void setarTextoEAcaoDosBotoesDaGUI()
 	{
-		botaoCancelar.setText("Cancelar");
-        botaoCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoCancelarActionPerformed(evt);
-            }
-        });
-
-        textoCidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoCidadeActionPerformed(evt);
-            }
-        });
-
-        textoTelefone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoTelefoneActionPerformed(evt);
-            }
-        });
-
-        botaoSalvar.setText("Salvar");
-        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSalvarActionPerformed(evt);
-            }
-        });
-
-        textoNumero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoNumeroActionPerformed(evt);
-            }
-        });
-
-        textoCEP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoCEPActionPerformed(evt);
-            }
-        });
-
-        textoRua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoRuaActionPerformed(evt);
-            }
-        });
-
-        textoBairro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoBairroActionPerformed(evt);
-            }
-        });
-
-        textoCPF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoCPFActionPerformed(evt);
-            }
-        });
-
-        textoRG.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoRGActionPerformed(evt);
-            }
-        });
-
-        textoNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoNomeActionPerformed(evt);
-            }
-        });
 
         botaoCancelar1.setText("Cancelar");
         botaoCancelar1.addActionListener(new java.awt.event.ActionListener() {
@@ -521,12 +433,7 @@ public class Cadastros extends javax.swing.JFrame {
         jLabel13.setText("Senha");
 	}
 
-    private void botaoCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCancelarActionPerformed
-        this.dispose();
-        TelaInicial telaInicial = TelaInicial.getInstance();
-        telaInicial.setVisible(true);
-
-    }//GEN-LAST:event_botaoCancelarActionPerformed
+   
 
     private void textoCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoCidadeActionPerformed
         // TODO add your handling code here:
@@ -536,8 +443,7 @@ public class Cadastros extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textoTelefoneActionPerformed
 
-    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
-    }//GEN-LAST:event_botaoSalvarActionPerformed
+    
 
     private void textoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoNumeroActionPerformed
         // TODO add your handling code here:
@@ -555,18 +461,8 @@ public class Cadastros extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textoBairroActionPerformed
 
-    private void textoCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoCPFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoCPFActionPerformed
 
-    private void textoRGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoRGActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoRGActionPerformed
-
-    private void textoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoNomeActionPerformed
-
+   
     private void botaoCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCancelar1ActionPerformed
         this.dispose();
         TelaInicial telaInicial = TelaInicial.getInstance();
@@ -810,4 +706,40 @@ public class Cadastros extends javax.swing.JFrame {
 	public void setTextoSenha(javax.swing.JPasswordField textoSenha) {
 		this.textoSenha = textoSenha;
 	}
+
+	public javax.swing.JButton getBotaoSalvar1() {
+		return botaoSalvar1;
+	}
+
+	public javax.swing.JButton getBotaoCancelar1() {
+		return botaoCancelar1;
+	}
+
+	public javax.swing.JTextField getTextoNome1() {
+		return textoNome1;
+	}
+
+	public javax.swing.JTextField getTextoRua1() {
+		return textoRua1;
+	}
+
+	public javax.swing.JTextField getTextoBairro1() {
+		return textoBairro1;
+	}
+
+	public javax.swing.JTextField getTextoNumero1() {
+		return textoNumero1;
+	}
+
+	public javax.swing.JTextField getTextoCEP1() {
+		return textoCEP1;
+	}
+
+	public javax.swing.JFormattedTextField getTextoTelefone1() {
+		return textoTelefone1;
+	}
+	
+	
+	
+	
 }

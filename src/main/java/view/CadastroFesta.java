@@ -88,6 +88,7 @@ public final class CadastroFesta extends javax.swing.JFrame {
     private javax.swing.JTextField textoRua;
     private javax.swing.JTextField textocpf;
     
+    
     public void prencherOpcoesTema(){
     	DAOTemas = FabricaDeDAO.criarTemaDAO();
     	DAOPacotes = FabricaDeDAO.criarPacoteDAO();
@@ -940,4 +941,84 @@ public final class CadastroFesta extends javax.swing.JFrame {
     		return false;
     	}
     }
+
+
+
+	public javax.swing.JButton getBuscarCliente() {
+		return buscarCliente;
+	}
+
+
+
+	public com.toedter.calendar.JDateChooser getDatainicio() {
+		return datainicio;
+	}
+
+	public com.toedter.calendar.JDateChooser getDatafim() {
+		return datafim;
+	}
+
+
+
+	public javax.swing.JButton getBotaoCriarPacote() {
+		return botaoCriarPacote;
+	}
+
+
+
+	public javax.swing.JButton getBotaoCancelar() {
+		return botaoCancelar;
+	}
+
+
+
+	public javax.swing.JTextField getTextocpf() {
+		return textocpf;
+	}
+
+
+
+	public javax.swing.JButton getChecarCPF() {
+		return checarCPF;
+	}
+
+
+
+	public javax.swing.JButton getBotaoChecar() {
+		return botaoChecar;
+	}
+
+
+
+	public javax.swing.JTextField getQntConvidados() {
+		return qntConvidados;
+	}
+
+
+
+	public javax.swing.JButton getBotaoSalvar() {
+		return botaoSalvar;
+	}
+
+
+
+	public javax.swing.JRadioButton getUsarEndereco() {
+		return UsarEndereco;
+	}
+
+
+
+	public javax.swing.JRadioButton getLocalExterno() {
+		return localExterno;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+    
+    
 }

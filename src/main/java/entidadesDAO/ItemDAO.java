@@ -40,7 +40,7 @@ public class ItemDAO extends ConectionDAO implements  InterfaceItemDAO {
             pstm.close();
             return true;
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Cadastrar um Item", ex.getMessage());
+        	
             return false;
         }
 
@@ -64,7 +64,7 @@ public class ItemDAO extends ConectionDAO implements  InterfaceItemDAO {
                 item.setPrecoUnidade(result.getFloat("precoUnidade"));
             }
         } catch (SQLException ex) {
-           mensagem.imprimeErro("Erro ao Buscar um Item", ex.getMessage());
+           return null;
         }
         fechar();
         return item;
@@ -88,7 +88,7 @@ public class ItemDAO extends ConectionDAO implements  InterfaceItemDAO {
                 item.setPrecoUnidade(result.getFloat("precoUnidade"));
             }
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Buscar um Item", ex.getMessage());
+            return null;
         }
         fechar();
         return item;
@@ -118,7 +118,7 @@ public class ItemDAO extends ConectionDAO implements  InterfaceItemDAO {
             fechar();
             return true;
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Atualizar um item", ex.getMessage());
+        	
             return false;
         }
     }
@@ -199,11 +199,13 @@ public class ItemDAO extends ConectionDAO implements  InterfaceItemDAO {
             return itens;
             
         } catch (SQLException ex) {
-            mensagem.imprimeErro("Erro ao Buscar um Item", ex.getMessage());
+            return null;
         }
-        return null;      
+            
     }
+     
     
+    //PAREI AQUI FALTA BOTAR ITEMDAO E ITEMDAOTEST NO REPOSITORIO
     
     
 }
