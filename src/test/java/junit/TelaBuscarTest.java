@@ -338,12 +338,5 @@ public class TelaBuscarTest {
             fail("falhou buscar monitor que nao existe");
 		}
 	}
-	
-	
-	@Test
-	public void testTestarMain() 
-	{
-		TelaBuscar.getInstance().main(null);
-	}
 
 }
