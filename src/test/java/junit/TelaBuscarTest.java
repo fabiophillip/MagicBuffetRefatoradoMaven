@@ -46,7 +46,7 @@ public class TelaBuscarTest {
                 public void run() {
                 	TelaBuscar.getInstance().destruirTela();
                 }
-            }); 
+            });
     }
 
 	@Test
@@ -125,6 +125,11 @@ public class TelaBuscarTest {
 			
 			r.delay(3000);
 			
+			while(TelaBuscar.getInstance().isShowing() == false)
+			{
+				TelaBuscar.getInstance().show();
+			}
+			
             Point p = radioButton.getLocationOnScreen();
         
             r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
@@ -179,6 +184,11 @@ public class TelaBuscarTest {
             AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
 			JRadioButton radioButton = TelaBuscar.getInstance().getFestaRB();
 			
+			while(TelaBuscar.getInstance().isShowing() == false)
+			{
+				TelaBuscar.getInstance().show();
+			}
+			
             Point p = radioButton.getLocationOnScreen();
         
             r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
@@ -231,6 +241,10 @@ public class TelaBuscarTest {
             AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
 			JRadioButton radioButton = TelaBuscar.getInstance().getMonitorRB();
 			
+			while(TelaBuscar.getInstance().isShowing() == false)
+			{
+				TelaBuscar.getInstance().show();
+			}
             Point p = radioButton.getLocationOnScreen();
         
             r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
@@ -285,7 +299,10 @@ public class TelaBuscarTest {
             AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
 			JRadioButton radioButton = TelaBuscar.getInstance().getMonitorRB();
 			
-			
+			while(TelaBuscar.getInstance().isShowing() == false)
+			{
+				TelaBuscar.getInstance().show();
+			}
             Point p = radioButton.getLocationOnScreen();
         
             r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
