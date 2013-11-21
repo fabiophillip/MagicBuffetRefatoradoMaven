@@ -120,6 +120,7 @@ public class TelaBuscarTest {
             AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
 			JRadioButton radioButton = TelaBuscar.getInstance().getClienteRB();
 			
+			r.delay(3000);
 			
             Point p = radioButton.getLocationOnScreen();
         
