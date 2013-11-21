@@ -11,7 +11,7 @@ public class ThreadPressionaEnterApos3Segundos extends Thread
 		try
 		{
 			final Robot r = new Robot();
-			r.delay(3000);
+			r.delay(6000);
 			r.keyPress(KeyEvent.VK_ENTER);
 		}
 		catch(AWTException e)
