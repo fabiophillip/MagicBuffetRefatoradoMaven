@@ -1,6 +1,7 @@
 package junit;
 
 import static org.junit.Assert.*;
+import org.junit.runners.MethodSorters;
 
 import java.awt.AWTException;
 import java.awt.Point;
@@ -14,10 +15,12 @@ import javax.swing.JRadioButton;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 
 import view.TelaBuscar;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TelaBuscarTest {
 
 	@Before
