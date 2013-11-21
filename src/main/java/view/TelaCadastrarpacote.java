@@ -1,5 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
+/* To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package view;
@@ -371,5 +370,36 @@ public class TelaCadastrarpacote extends javax.swing.JFrame
 	public void setTabela(javax.swing.JTable tabela) {
 		this.tabela = tabela;
 	}
+
+	public javax.swing.JButton getCANCELAR() {
+		return CANCELAR;
+	}
+
+	public javax.swing.JButton getCalcularPreco() {
+		return calcularPreco;
+	}
+
+	public javax.swing.JTextField getTextoNomePacote() {
+		return textoNomePacote;
+	}
+
+	public javax.swing.JButton getSALVAR() {
+		return SALVAR;
+	}
+
+	public javax.swing.JTextField getDesconto() {
+		return desconto;
+	}
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
     
 }
+
