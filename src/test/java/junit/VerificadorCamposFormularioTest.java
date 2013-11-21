@@ -21,8 +21,6 @@ public class VerificadorCamposFormularioTest
 	@Test
 	public void testCpfEhValidoMenorQue11() 
 	{
-		ThreadPressionaEnterApos3Segundos thread = new ThreadPressionaEnterApos3Segundos();
-		thread.start();
 		boolean cpfValido = VerificadorCamposFormulario.cpfEhValido("003");
 	    assertEquals(cpfValido,false);
 	}
@@ -30,8 +28,7 @@ public class VerificadorCamposFormularioTest
 	@Test
 	public void testCpfEhValidoCPfInvalido() 
 	{
-		ThreadPressionaEnterApos3Segundos thread = new ThreadPressionaEnterApos3Segundos();
-		thread.start();
+		
 		
 		boolean cpfValido = VerificadorCamposFormulario.cpfEhValido("14546718749");
 	    assertEquals(cpfValido,false);
@@ -48,8 +45,7 @@ public class VerificadorCamposFormularioTest
 	@Test
 	public void testCampoNumericoDeValorAte11EhValidoValorVazio()
 	{
-		ThreadPressionaEnterApos3Segundos thread = new ThreadPressionaEnterApos3Segundos();
-		thread.start();
+		
 		
 		boolean campoValido = VerificadorCamposFormulario.campoNumericoDeValorAte11EhValido("", "");
 		assertEquals(campoValido,false);
@@ -58,8 +54,7 @@ public class VerificadorCamposFormularioTest
 	@Test
 	public void testCampoNumericoDeValorAte11EhValidoValorNaoNumerico()
 	{
-		ThreadPressionaEnterApos3Segundos thread = new ThreadPressionaEnterApos3Segundos();
-		thread.start();
+		
 		
 		boolean campoValido = VerificadorCamposFormulario.campoNumericoDeValorAte11EhValido("hhaja", "");
 		assertEquals(campoValido,false);
@@ -68,8 +63,7 @@ public class VerificadorCamposFormularioTest
 	@Test
 	public void testCampoNumericoDeValorAte11EhValidoAlgarismosMenorQueZero()
 	{
-		ThreadPressionaEnterApos3Segundos thread = new ThreadPressionaEnterApos3Segundos();
-		thread.start();
+		
 		
 		boolean campoValido = VerificadorCamposFormulario.campoNumericoDeValorAte11EhValido("-1", "");
 		assertEquals(campoValido,false);
@@ -92,8 +86,7 @@ public class VerificadorCamposFormularioTest
 	@Test
 	public void testdataEhValidaDataInvalida()
 	{
-		ThreadPressionaEnterApos3Segundos thread = new ThreadPressionaEnterApos3Segundos();
-		thread.start();
+		
 		
 		boolean campoValido = VerificadorCamposFormulario.dataEhValida(null);
 		assertEquals(campoValido,false);
@@ -102,8 +95,7 @@ public class VerificadorCamposFormularioTest
 	@Test
 	public void testcampoComAte25CaracteresEhValidoCampoVazio()
 	{
-		ThreadPressionaEnterApos3Segundos thread = new ThreadPressionaEnterApos3Segundos();
-		thread.start();
+		
 		
 		boolean campoValido = VerificadorCamposFormulario.campoComAte25CaracteresEhValido("", "");
 		assertEquals(campoValido,false);
@@ -112,8 +104,7 @@ public class VerificadorCamposFormularioTest
 	@Test
 	public void testcampoComAte25CaracteresEhValidoCampoInvalido()
 	{
-		ThreadPressionaEnterApos3Segundos thread = new ThreadPressionaEnterApos3Segundos();
-		thread.start();
+		
 		
 		boolean campoValido = VerificadorCamposFormulario.campoComAte25CaracteresEhValido("rua dom jose tomaz", "cep");
 		assertEquals(campoValido,false);
@@ -144,8 +135,7 @@ public class VerificadorCamposFormularioTest
 	@Test
 	public void testprecoEhValidoVazio()
 	{
-		ThreadPressionaEnterApos3Segundos thread = new ThreadPressionaEnterApos3Segundos();
-		thread.start();
+		
 		
 		boolean campoValido = VerificadorCamposFormulario.precoEhValido("");
 		assertEquals(campoValido,false);
@@ -154,8 +144,7 @@ public class VerificadorCamposFormularioTest
 	@Test
 	public void testprecoEhValidoInvalido()
 	{
-		ThreadPressionaEnterApos3Segundos thread = new ThreadPressionaEnterApos3Segundos();
-		thread.start();
+		
 		
 		boolean campoValido = VerificadorCamposFormulario.precoEhValido("-3");
 		assertEquals(campoValido,false);
@@ -171,8 +160,7 @@ public class VerificadorCamposFormularioTest
 	@Test
 	public void testnomeEhValidoInvalido()
 	{
-		ThreadPressionaEnterApos3Segundos thread = new ThreadPressionaEnterApos3Segundos();
-		thread.start();
+		
 		
 		boolean campoValido = VerificadorCamposFormulario.nomeEhValido("asdgwjrelfpitrmfhsldfhrucxmdheriejfosmejgosdmfrkrkfmssgksksmcfmdf", "nome");
 		assertEquals(campoValido,false);
@@ -188,8 +176,7 @@ public class VerificadorCamposFormularioTest
 	@Test
 	public void testtelefoneEhValidoInvalido()
 	{
-		ThreadPressionaEnterApos3Segundos thread = new ThreadPressionaEnterApos3Segundos();
-		thread.start();
+		
 		
 		boolean campoValido = VerificadorCamposFormulario.telefoneEhValido("8");
 		assertEquals(campoValido,false);
