@@ -67,7 +67,12 @@ public class TelaCadastrarPacoteTest {
 		try { Thread.sleep(3000); } catch (Exception e) {}
 		Robot r;
 		try {
+			
 			r = new Robot();
+			while(telaCadastrarPacote.isShowing() == false)
+	        {
+	        	telaCadastrarPacote.show();
+	        }
 			r.delay(3000);
 			JButton botaoCancelar = telaCadastrarPacote.getCANCELAR();
 			Point p = botaoCancelar.getLocationOnScreen();
@@ -90,6 +95,10 @@ public class TelaCadastrarPacoteTest {
 		Robot r;
 		try {
 			r = new Robot();
+			while(telaCadastrarPacote.isShowing() == false)
+	        {
+	        	telaCadastrarPacote.show();
+	        }
 			r.delay(3000);
 			
 			JTextField textFieldNomePacote = telaCadastrarPacote.getTextoNomePacote();
@@ -151,6 +160,10 @@ public class TelaCadastrarPacoteTest {
 		 Robot r;
 		try {
 			r = new Robot();
+			while(telaCadastrarPacote.isShowing() == false)
+	        {
+	        	telaCadastrarPacote.show();
+	        }
 			 Point p = botaoSalvar.getLocationOnScreen();
 		     r.mouseMove(p.x + botaoSalvar.getWidth() / 2, p.y + botaoSalvar.getHeight() / 2);
 		     r.mousePress(InputEvent.BUTTON1_MASK);
@@ -167,7 +180,6 @@ public class TelaCadastrarPacoteTest {
 	}
 	
 	@Test
-	
 	public void testCadastrarPacoteComNomeJahExistente()
 	{
 		 
@@ -197,6 +209,10 @@ public class TelaCadastrarPacoteTest {
     		 Robot r;
     		try {
     			 r = new Robot();
+    			 while(telaCadastrarPacote.isShowing() == false)
+    		        {
+    		        	telaCadastrarPacote.show();
+    		        }
     			 JTextField textFieldNomePacote = telaCadastrarPacote.getTextoNomePacote();
     			 textFieldNomePacote.setText("pacotaoSupimba");
     			 Point ponto = botaoSalvar.getLocationOnScreen();
