@@ -28,7 +28,7 @@ import view.TelaCadastrarpacote;
 
 public class TelaCadastrarPacoteTest {
 
-	TelaCadastrarpacote telaCadastrarPacote;
+	TelaCadastrarpacote telaCadastrarPacote; 
 	@Before
 	public void setUp() throws Exception {
 		//TelaCadastrarpacote.main(null);//cria uma telinha para testar o main...
@@ -69,11 +69,11 @@ public class TelaCadastrarPacoteTest {
 		try {
 			
 			r = new Robot();
+			r.delay(3000);
 			while(telaCadastrarPacote.isShowing() == false)
 	        {
 	        	telaCadastrarPacote.show();
 	        }
-			r.delay(3000);
 			JButton botaoCancelar = telaCadastrarPacote.getCANCELAR();
 			Point p = botaoCancelar.getLocationOnScreen();
 			r.mouseMove(p.x + botaoCancelar.getWidth() / 2, p.y + botaoCancelar.getHeight() / 2);
@@ -95,11 +95,12 @@ public class TelaCadastrarPacoteTest {
 		Robot r;
 		try {
 			r = new Robot();
+			r.delay(3000);
 			while(telaCadastrarPacote.isShowing() == false)
 	        {
 	        	telaCadastrarPacote.show();
 	        }
-			r.delay(3000);
+			
 			
 			JTextField textFieldNomePacote = telaCadastrarPacote.getTextoNomePacote();
 			textFieldNomePacote.setText("pacote novo");
@@ -160,6 +161,7 @@ public class TelaCadastrarPacoteTest {
 		 Robot r;
 		try {
 			r = new Robot();
+			r.delay(3000);
 			while(telaCadastrarPacote.isShowing() == false)
 	        {
 	        	telaCadastrarPacote.show();
@@ -209,6 +211,7 @@ public class TelaCadastrarPacoteTest {
     		 Robot r;
     		try {
     			 r = new Robot();
+    			 r.delay(3000);
     			 while(telaCadastrarPacote.isShowing() == false)
     		        {
     		        	telaCadastrarPacote.show();
