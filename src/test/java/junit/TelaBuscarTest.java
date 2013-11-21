@@ -61,20 +61,29 @@ public class TelaBuscarTest {
 		
 		try
 		{
-			AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
-			JRadioButton radioButton = TelaBuscar.getInstance().getClienteRB();
-			radioButton.setSelected(true);
-            Point p = button.getLocationOnScreen();
 
             final Robot r = new Robot();
             r.delay(3000);
+            
+            AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
+			JRadioButton radioButton = TelaBuscar.getInstance().getClienteRB();
+            Point p = radioButton.getLocationOnScreen();
         
             r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
             r.mousePress(InputEvent.BUTTON1_MASK);
         
             r.delay(3000);
             r.mouseRelease(InputEvent.BUTTON1_MASK);
+            
+            r.delay(3000);
+            
+            Point p2 = button.getLocationOnScreen();
         
+            r.mouseMove(p2.x + button.getWidth() / 2, p2.y + button.getHeight() / 2);
+            r.mousePress(InputEvent.BUTTON1_MASK);
+        
+            r.delay(3000);
+            r.mouseRelease(InputEvent.BUTTON1_MASK);
         
             r.delay(3000);
         
@@ -99,15 +108,16 @@ public class TelaBuscarTest {
 		
 		try
 		{
-			AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
-			JRadioButton radioButton = TelaBuscar.getInstance().getClienteRB();
-			radioButton.setSelected(true);
 			TelaBuscar.getInstance().getCpfText().setText("00772543411");
-			
-            Point p = button.getLocationOnScreen();
 
             final Robot r = new Robot();
             r.delay(3000);
+            
+            AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
+			JRadioButton radioButton = TelaBuscar.getInstance().getClienteRB();
+			
+			
+            Point p = radioButton.getLocationOnScreen();
         
             r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
             r.mousePress(InputEvent.BUTTON1_MASK);
@@ -115,6 +125,15 @@ public class TelaBuscarTest {
             r.delay(3000);
             r.mouseRelease(InputEvent.BUTTON1_MASK);
         
+            r.delay(3000);
+            
+            Point p2 = button.getLocationOnScreen();
+            
+            r.mouseMove(p2.x + button.getWidth() / 2, p2.y + button.getHeight() / 2);
+            r.mousePress(InputEvent.BUTTON1_MASK);
+        
+            r.delay(3000);
+            r.mouseRelease(InputEvent.BUTTON1_MASK);
         
             r.delay(3000);
             
@@ -143,13 +162,14 @@ public class TelaBuscarTest {
 		
 		try
 		{
-			AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
-			JRadioButton radioButton = TelaBuscar.getInstance().getFestaRB();
-			radioButton.setSelected(true);
-            Point p = button.getLocationOnScreen();
 
             final Robot r = new Robot();
             r.delay(3000);
+            
+            AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
+			JRadioButton radioButton = TelaBuscar.getInstance().getFestaRB();
+			
+            Point p = radioButton.getLocationOnScreen();
         
             r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
             r.mousePress(InputEvent.BUTTON1_MASK);
@@ -158,6 +178,16 @@ public class TelaBuscarTest {
             r.mouseRelease(InputEvent.BUTTON1_MASK);
         
             r.delay(3000);
+            
+            Point p2 = button.getLocationOnScreen();
+            r.mouseMove(p2.x + button.getWidth() / 2, p2.y + button.getHeight() / 2);
+            r.mousePress(InputEvent.BUTTON1_MASK);
+        
+            r.delay(3000);
+            r.mouseRelease(InputEvent.BUTTON1_MASK);
+        
+            r.delay(3000);
+            
             r.keyPress(KeyEvent.VK_ENTER);
 			
 			r.delay(3000);
@@ -184,15 +214,27 @@ public class TelaBuscarTest {
 		
 		try
 		{
-			AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
-			JRadioButton radioButton = TelaBuscar.getInstance().getMonitorRB();
-			radioButton.setSelected(true);
-            Point p = button.getLocationOnScreen();
 
             final Robot r = new Robot();
             r.delay(3000);
+            
+            AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
+			JRadioButton radioButton = TelaBuscar.getInstance().getMonitorRB();
+			
+            Point p = radioButton.getLocationOnScreen();
         
             r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
+            r.mousePress(InputEvent.BUTTON1_MASK);
+        
+            r.delay(3000);
+            r.mouseRelease(InputEvent.BUTTON1_MASK);
+        
+        
+            r.delay(3000);
+            
+            Point p2 = button.getLocationOnScreen();
+            
+            r.mouseMove(p2.x + button.getWidth() / 2, p2.y + button.getHeight() / 2);
             r.mousePress(InputEvent.BUTTON1_MASK);
         
             r.delay(3000);
@@ -223,17 +265,29 @@ public class TelaBuscarTest {
 		
 		try
 		{
-			AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
-			JRadioButton radioButton = TelaBuscar.getInstance().getMonitorRB();
-			radioButton.setSelected(true);
 			TelaBuscar.getInstance().getCpfText().setText("00772543411");
-			
-            Point p = button.getLocationOnScreen();
 
             final Robot r = new Robot();
             r.delay(3000);
+            
+            AbstractButton button = TelaBuscar.getInstance().getBotaoBuscar();
+			JRadioButton radioButton = TelaBuscar.getInstance().getMonitorRB();
+			
+			
+            Point p = radioButton.getLocationOnScreen();
         
             r.mouseMove(p.x + button.getWidth() / 2, p.y + button.getHeight() / 2);
+            r.mousePress(InputEvent.BUTTON1_MASK);
+        
+            r.delay(3000);
+            r.mouseRelease(InputEvent.BUTTON1_MASK);
+        
+        
+            r.delay(3000);
+            
+            Point p2 = button.getLocationOnScreen();
+            
+            r.mouseMove(p2.x + button.getWidth() / 2, p2.y + button.getHeight() / 2);
             r.mousePress(InputEvent.BUTTON1_MASK);
         
             r.delay(3000);
